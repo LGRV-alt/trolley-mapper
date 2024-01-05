@@ -2,9 +2,10 @@ import { useState } from "react";
 
 function VechicleSection() {
   let lorryButtons = ["4", "8", "12", "16", "20", "24"];
-  let trailerButtons = ["3", "6", "7"];
+  let trailerButtons = [3, 6, 7];
 
   const [lorry, setLorry] = useState(lorryButtons);
+  const [gridItems, setGridItems] = useState();
 
   const [grid, setGrid] = useState({
     col: 3,
@@ -39,18 +40,31 @@ function VechicleSection() {
     console.log(grid);
   }
 
+  function generateGrid(number) {
+    setGridItems(number);
+    let arr = [];
+    for (let i = 0; i < number; i++) {
+      arr.push(i);
+    }
+    console.log(arr);
+  }
+
   return (
     <div className="outline outline-white p-2 flex content-center flex-col items-center">
       <div className="outline flex justify-evenly items-center outline-white w-1/2 h-7 mt-4">
         {lorry.map((item, index) => (
-          <button key={index}>{item}T</button>
+          <button onClick={() => generateGrid(item)} key={index}>
+            {item}T
+          </button>
         ))}
       </div>
       <div
         className={` outline outline-white h-3/4 w-3/4 mt-8 grid grid-cols-${grid.col} grid-rows-${grid.row} `}
       >
         {grid.items.map(() => (
-          <div key="2" className="outline outline-white"></div>
+          <div key="2" className="outline outline-white">
+            {gridItems}
+          </div>
         ))}
       </div>
       <div>
