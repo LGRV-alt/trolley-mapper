@@ -3,21 +3,61 @@ import { useState } from "react";
 function VechicleSection() {
   let lorryButtons = ["4", "8", "12", "16", "20", "24"];
   let trailerButtons = ["3", "6", "7"];
-  const [lorry, setLorry] = useState(true);
+
+  const [lorry, setLorry] = useState(lorryButtons);
+
+  const [grid, setGrid] = useState({
+    col: 3,
+    row: 3,
+    items: [],
+    totalTrollies: 24,
+  });
+
+  function handleTrailer() {
+    let totalTrollies = 7;
+    let gridItems = [];
+    for (let i = 0; i < totalTrollies; i++) {
+      gridItems.push("");
+    }
+    setLorry(trailerButtons);
+    setGrid({
+      items: gridItems,
+      col: 3,
+      row: 3,
+    });
+    console.log(grid);
+  }
+
+  function handleLorry() {
+    let totalTrollies = 24;
+    let gridItems = [];
+    for (let i = 0; i < totalTrollies; i++) {
+      gridItems.push("");
+    }
+    setLorry(lorryButtons);
+    setGrid({ col: 4, row: 6, items: gridItems });
+    console.log(grid);
+  }
 
   return (
     <div className="outline outline-white p-2 flex content-center flex-col items-center">
       <div className="outline flex justify-evenly items-center outline-white w-1/2 h-7 mt-4">
-        {lorry
-          ? lorryButtons.map((item) => <li key={item}>{item}T</li>)
-          : trailerButtons.map((item) => <li key={item}>{item}T</li>)}
+        {lorry.map((item, index) => (
+          <button key={index}>{item}T</button>
+        ))}
       </div>
-      <div className="outline outline-white h-3/4 w-3/4 mt-8 "></div>
+      <div
+        className={` outline outline-white h-3/4 w-3/4 mt-8 grid grid-cols-${grid.col} grid-rows-${grid.row} `}
+      >
+        {grid.items.map(() => (
+          <div key="2" className="outline outline-white"></div>
+        ))}
+      </div>
       <div>
-        <button onClick={() => setLorry(true)} className="mr-4">
+        <button onClick={handleLorry} className="mr-4">
           lorry
         </button>
-        <button onClick={() => setLorry(false)}>trailer</button>
+        <button onClick={handleTrailer}>trailer</button>
       </div>
     </div>
   );
