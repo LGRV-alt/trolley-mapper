@@ -11,7 +11,9 @@ function Header() {
       </h1>
 
       <ul>
-        <li className="mr-6 text-sm  ">button</li>
+        <li className="mr-6 text-sm">
+          <button className="bg-white hover:bg-yellow-600">button</button>
+        </li>
       </ul>
     </div>
   );
