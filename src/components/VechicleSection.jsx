@@ -1,5 +1,6 @@
 import { useState } from "react";
 import GridItem from "./GirdItem";
+import LorryMap from "./Lorry";
 
 function VechicleSection({ customerName }) {
   // These are the hardscoded values for the lorry or trailer trolly options
@@ -35,7 +36,6 @@ function VechicleSection({ customerName }) {
     }
     setGridItems(arr);
   }
-
   return (
     <div className="outline outline-white p-2 flex content-center flex-col items-center">
       <div className="outline flex justify-evenly items-center outline-white w-1/2 h-7 mt-4">
@@ -45,15 +45,11 @@ function VechicleSection({ customerName }) {
           </button>
         ))}
       </div>
-      <div
-        className={` outline outline-white h-3/4 w-3/4 mt-8 grid grid-cols-${grid.col} grid-rows-${grid.row} `}
-      >
-        {gridItems.map((item, index) => (
-          <div key="2" className="outline outline-white">
-            <GridItem value={customerName} index={index} />
-          </div>
-        ))}
-      </div>
+      <LorryMap
+        customerName={customerName}
+        gridLayout={grid}
+        grid={gridItems}
+      />
       <div>
         <button onClick={handleLorry} className="mr-4">
           lorry
