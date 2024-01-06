@@ -8,7 +8,7 @@ function VechicleSection({ customerName }) {
   let lorryButtons = [4, 8, 12, 16, 20, 24];
   let trailerButtons = [3, 6, 7];
 
-  const [vehicle, setVehicle] = useState("");
+  const [vehicle, setVehicle] = useState("lorry");
   const [lorry, setLorry] = useState(lorryButtons);
   const [gridItems, setGridItems] = useState([]);
 
