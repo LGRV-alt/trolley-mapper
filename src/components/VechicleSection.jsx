@@ -1,10 +1,11 @@
 import { useState } from "react";
+import GridItem from "./GirdItem";
 
-function VechicleSection() {
+function VechicleSection({ customerName }) {
+  // These are the hardscoded values for the lorry or trailer trolly options
   let lorryButtons = [4, 8, 12, 16, 20, 24];
   let trailerButtons = [3, 6, 7];
 
-  const [userChoice, setUserChoice] = useState("");
   const [lorry, setLorry] = useState(lorryButtons);
   const [gridItems, setGridItems] = useState([]);
   const [grid, setGrid] = useState({
@@ -13,12 +14,12 @@ function VechicleSection() {
   });
 
   function handleTrailer() {
-    setGridItems([]);
     setLorry(trailerButtons);
     setGrid({
       col: 3,
       row: 3,
     });
+    setGridItems([]);
   }
 
   function handleLorry() {
@@ -47,13 +48,9 @@ function VechicleSection() {
       <div
         className={` outline outline-white h-3/4 w-3/4 mt-8 grid grid-cols-${grid.col} grid-rows-${grid.row} `}
       >
-        {gridItems.map(() => (
-          <div
-            onClick={() => console.log(userChoice)}
-            key="2"
-            className="outline outline-white"
-          >
-            {userChoice}
+        {gridItems.map((item, index) => (
+          <div key="2" className="outline outline-white">
+            <GridItem value={customerName} index={index} />
           </div>
         ))}
       </div>
