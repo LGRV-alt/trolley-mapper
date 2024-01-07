@@ -4,7 +4,11 @@ function NewCustomerButton({ setCustomerList, customerList }) {
   const [customer, setCustomer] = useState({});
   const [form, setForm] = useState({});
 
+  // TODO - handle invalid customer entry
   function handleCreate() {
+    if (form.name.length < 1) {
+      alert("needs a name");
+    }
     setCustomerList([...customerList, form]);
     setCustomer({});
     setForm({ name: "", trollies: "", extras: "" });
@@ -12,12 +16,11 @@ function NewCustomerButton({ setCustomerList, customerList }) {
 
   function handleFormInputs(event, key) {
     setCustomer({ ...customer, [key]: event.target.value });
-    console.log(customer);
     setForm({ ...form, [key]: event.target.value });
   }
   return (
-    <div className="border-2 border-white w-full h-12 mb-60">
-      <form>
+    <div className="border-2 border-white w-full h-1/4 mb-60">
+      <form className="flex flex-col ">
         <label>
           Name:
           <input
@@ -36,6 +39,7 @@ function NewCustomerButton({ setCustomerList, customerList }) {
             name="trollies"
             placeholder="4T"
             onChange={(event) => handleFormInputs(event, "trollies")}
+            className="w-11"
           />
         </label>
         <label>
@@ -50,9 +54,6 @@ function NewCustomerButton({ setCustomerList, customerList }) {
         </label>
       </form>
       <button onClick={() => handleCreate()}>create</button>
-      <p>Name:{customer.name}</p>
-      <p>Trollies:{customer.trollies}</p>
-      <p>Extras: {customer.extras}</p>
     </div>
   );
 }

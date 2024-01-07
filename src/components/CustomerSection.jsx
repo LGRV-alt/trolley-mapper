@@ -1,7 +1,7 @@
 import { useState } from "react";
 import NewCustomerButton from "./NewCustomerButton";
 
-function CustomerSection({ customerName, onClick }) {
+function CustomerSection({ onClick }) {
   const [customerList, setCustomerList] = useState([]);
   console.log("customerList:", customerList);
   return (
@@ -10,14 +10,15 @@ function CustomerSection({ customerName, onClick }) {
         setCustomerList={setCustomerList}
         customerList={customerList}
       />
-      <h3>Customers</h3>
-      <h3 onClick={() => onClick("lewis")}>Lewis</h3>
-      <h3 onClick={() => onClick("Jen")}>Jen</h3>
+      {/* TODO - Change this to a component for each customer */}
+      <h2>Customers</h2>
       <h3>{customerList.name}</h3>
       {customerList.map((item, index) => (
-        <h3 key={index} onClick={() => onClick([item.name])}>
-          {item.name}
-        </h3>
+        <div key={index} onClick={() => onClick([item.name])}>
+          <h3>{item.name}</h3>
+          <h3>{item.trollies + "T"}</h3>
+          <h3>{item.extras}</h3>
+        </div>
       ))}
     </div>
   );
