@@ -9,12 +9,14 @@ function NewCustomerButton() {
     setForm({ name: "" });
   }
 
-  function handleFormInputs(event, inputName) {
-    setCustomer({ ...customer, [inputName]: event.target.value });
+  function handleFormInputs(event, key) {
+    console.log(customer);
+    setCustomer({ ...customer, [key]: event.target.value });
+    console.log(customer);
     setForm({ ...form, name: event.target.value });
   }
   return (
-    <div className="border-2 border-white w-full h-12 mb-8">
+    <div className="border-2 border-white w-full h-12 mb-60">
       <form>
         <label>
           Name:
@@ -23,7 +25,7 @@ function NewCustomerButton() {
             type="text"
             name="name"
             placeholder="Landscapers"
-            onChange={(event) => handleFormInputs(event)}
+            onChange={(event) => handleFormInputs(event, "name")}
           />
         </label>
         <label>
@@ -33,7 +35,7 @@ function NewCustomerButton() {
             type="number"
             name="trollies"
             placeholder="4T"
-            onChange={(event) => handleFormInputs(event)}
+            onChange={(event) => handleFormInputs(event, "trollies")}
           />
         </label>
         <label>
@@ -43,14 +45,14 @@ function NewCustomerButton() {
             type="text"
             name="extras"
             placeholder="10 Comp"
-            onChange={(event) => handleFormInputs(event, extras)}
+            onChange={(event) => handleFormInputs(event, "extras")}
           />
         </label>
       </form>
       <button onClick={() => handleCreate()}>create</button>
-      <p>{customer.name}</p>
-      <p>{customer.trollies}</p>
-      <p>Extras: {customer.trollies}</p>
+      <p>Name:{customer.name}</p>
+      <p>Trollies:{customer.trollies}</p>
+      <p>Extras: {customer.extras}</p>
     </div>
   );
 }
