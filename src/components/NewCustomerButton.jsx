@@ -13,7 +13,7 @@ function NewCustomerButton() {
     console.log(customer);
     setCustomer({ ...customer, [key]: event.target.value });
     console.log(customer);
-    setForm({ ...form, name: event.target.value });
+    setForm({ ...form, [key]: event.target.value });
   }
   return (
     <div className="border-2 border-white w-full h-12 mb-60">
@@ -51,7 +51,7 @@ function NewCustomerButton() {
       </form>
       <button onClick={() => handleCreate()}>create</button>
       <p>Name:{customer.name}</p>
-      <p>Trollies:{customer.trollies}</p>
+      <p>Trollies:{customer.trollies}T</p>
       <p>Extras: {customer.extras}</p>
     </div>
   );
