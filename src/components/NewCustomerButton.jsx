@@ -1,16 +1,16 @@
 import { useState } from "react";
 
-function NewCustomerButton() {
+function NewCustomerButton({ setCustomerList, customerList }) {
   const [customer, setCustomer] = useState({});
   const [form, setForm] = useState({});
 
   function handleCreate() {
+    setCustomerList([...customerList, form]);
     setCustomer({});
-    setForm({ name: "" });
+    setForm({ name: "", trollies: "", extras: "" });
   }
 
   function handleFormInputs(event, key) {
-    console.log(customer);
     setCustomer({ ...customer, [key]: event.target.value });
     console.log(customer);
     setForm({ ...form, [key]: event.target.value });
@@ -51,7 +51,7 @@ function NewCustomerButton() {
       </form>
       <button onClick={() => handleCreate()}>create</button>
       <p>Name:{customer.name}</p>
-      <p>Trollies:{customer.trollies}T</p>
+      <p>Trollies:{customer.trollies}</p>
       <p>Extras: {customer.extras}</p>
     </div>
   );
