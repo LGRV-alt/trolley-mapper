@@ -19,7 +19,7 @@ function NewCustomerButton({ setCustomerList, customerList }) {
     setForm({ ...form, [key]: event.target.value });
   }
   return (
-    <div className="border-2 border-white w-1/2 h-1/4 mb-10">
+    <div className="border-2 border-white  bg-red-50">
       <form className="flex flex-col justify mt-4 ml-4">
         <label className="flex justify-between w-full">
           Name:
