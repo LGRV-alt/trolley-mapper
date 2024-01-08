@@ -19,7 +19,7 @@ function NewCustomerButton({ setCustomerList, customerList }) {
     setForm({ ...form, [key]: event.target.value });
   }
   return (
-    <div className="border-2 border-white  bg-red-50">
+    <div className="border-2 border-white ">
       <form className="flex flex-col justify mt-4 ml-4">
         <label className="flex justify-between w-full">
           Name:
@@ -43,7 +43,7 @@ function NewCustomerButton({ setCustomerList, customerList }) {
             onChange={(event) => handleFormInputs(event, "trollies")}
           />
         </label>
-        <label className="flex justify-between">
+        <label className="flex justify-between mb-4">
           Extras:
           <input
             className="mr-6"
@@ -56,7 +56,7 @@ function NewCustomerButton({ setCustomerList, customerList }) {
         </label>
       </form>
       <button
-        className=" w-full bg-black text-white mt-4"
+        className=" w-full bg-black text-white "
         onClick={() => handleCreate()}
       >
         create

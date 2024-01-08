@@ -21,19 +21,18 @@ function VehicleInfo() {
         <label className="flex justify-between">
           Vehicle Reg:
           <input
-            className=" mb-4 mr-6"
+            className=" mb-4 mr-6 border-black border-2"
             type="text"
             name="vehicleReg"
             placeholder="SN20 YOA"
           />
         </label>
 
-        <label className="flex justify-between mr-6">
+        <label className="flex justify-between mr-6 mb-4">
           Date:
           <DatePicker className="" onChange={onChange} value={value} />
         </label>
       </form>
-      <button className=" w-full bg-black text-white mt-4">create</button>
     </div>
   );
 }
