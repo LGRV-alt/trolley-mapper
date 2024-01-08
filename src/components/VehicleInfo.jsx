@@ -1,6 +1,13 @@
+import { useState } from "react";
+import DatePicker from "react-date-picker";
+import "react-date-picker/dist/DatePicker.css";
+import "react-calendar/dist/Calendar.css";
+
 function VehicleInfo() {
+  const [value, onChange] = useState(new Date());
+
   return (
-    <div className="border-2 border-white ">
+    <div className="border-2 border-white bg-white">
       <form className="flex flex-col justify mt-4 ml-4">
         <label className="flex justify-between w-full">
           Drivers Name:
@@ -20,14 +27,10 @@ function VehicleInfo() {
             placeholder="SN20 YOA"
           />
         </label>
-        <label className="flex justify-between">
+
+        <label className="flex justify-between mr-6">
           Date:
-          <input
-            className="mr-6"
-            type="text"
-            name="extras"
-            placeholder="10 Comp"
-          />
+          <DatePicker className="" onChange={onChange} value={value} />
         </label>
       </form>
       <button className=" w-full bg-black text-white mt-4">create</button>
