@@ -24,7 +24,7 @@ function NewCustomerButton({ setCustomerList, customerList }) {
         <div className="w-full flex flex-col">
           <label className="flex ">Customer Name</label>
           <input
-            className="mb-2 w-2/3"
+            className="mb-2 w-2/3 rounded"
             value={form.name}
             type="text"
             name="name"
