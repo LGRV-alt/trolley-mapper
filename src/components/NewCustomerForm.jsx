@@ -20,11 +20,11 @@ function NewCustomerButton({ setCustomerList, customerList }) {
   }
   return (
     <div className="border-2 border-white ">
-      <form className="flex flex-col justify mt-4 ml-4">
-        <label className="flex justify-between w-full">
+      <form className="grid grid-cols-1 grid-rows-3 mt-4 ml-4">
+        <label className="">
           Name:
           <input
-            className="mb-4 mr-6"
+            className="mb-4 "
             value={form.name}
             type="text"
             name="name"
@@ -32,10 +32,10 @@ function NewCustomerButton({ setCustomerList, customerList }) {
             onChange={(event) => handleFormInputs(event, "name")}
           />
         </label>
-        <label className="flex justify-between">
+        <label className="flex ">
           Trollies:
           <input
-            className=" mb-4 mr-6"
+            className=" mb-4 w-12 "
             value={form.trollies}
             type="number"
             name="trollies"

@@ -7,7 +7,7 @@ function VehicleInfo() {
   const [value, onChange] = useState(new Date());
 
   return (
-    <div className="border-2 border-white bg-white">
+    <div className="border-2 border-white bg-[#161617]">
       <form className="flex flex-col justify mt-4 ml-4">
         <label className="flex justify-between w-full">
           Drivers Name:
