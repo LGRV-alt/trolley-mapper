@@ -7,31 +7,32 @@ function VehicleInfo() {
   const [value, onChange] = useState(new Date());
 
   return (
-    <div className="border-2 border-white bg-[#161617]">
-      <form className="flex flex-col justify mt-4 ml-4">
-        <label className="flex justify-between w-full">
-          Drivers Name:
+    <div className="border-2 border-white bg-slate-500 min-w-60">
+      <form className="grid grid-cols-1 grid-rows-3 mt-4 ml-4">
+        <div className="w-full flex flex-col">
+          <label className="flex justify-between w-full">Drivers Name:</label>
           <input
-            className="mb-4 mr-6"
+            className="mb-2 w-2/3 rounded border-black border-2 placeholder p-1"
             type="text"
             name="driversName"
             placeholder="John Doe"
           />
-        </label>
-        <label className="flex justify-between">
-          Vehicle Reg:
+        </div>
+        <div className="w-full flex flex-col">
+          <label className="flex justify-between">Vehicle Reg:</label>
           <input
-            className=" mb-4 mr-6 border-black border-2"
+            className=" mb-2 w-2/3 rounded  border-black border-2 p-1"
             type="text"
             name="vehicleReg"
             placeholder="SN20 YOA"
           />
-        </label>
-
-        <label className="flex justify-between mr-6 mb-4">
-          Date:
-          <DatePicker className="" onChange={onChange} value={value} />
-        </label>
+        </div>
+        <div className="w-full">
+          <label className="flex gap-3 mb-4">
+            Date:
+            <DatePicker className="" onChange={onChange} value={value} />
+          </label>
+        </div>
       </form>
     </div>
   );
