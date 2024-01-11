@@ -25,7 +25,7 @@ function VechicleSection({ customerName }) {
   }
 
   return (
-    <div className="outline outline-white p-2 flex content-center flex-col items-center">
+    <div className=" p-2 flex content-center flex-col items-center">
       <div>
         <button onClick={handleLorry} className="mr-4">
           lorry

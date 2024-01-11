@@ -9,7 +9,7 @@ function GridItem({ value, index }) {
   }
   return (
     <div
-      className="flex justify-center items-center text-lg w-full bg-blue-200 hover:bg-white cursor-pointer h-full"
+      className="flex justify-center items-center text-lg w-full bg-transparent hover:bg-slate-700 cursor-pointer h-full"
       onClick={() => checkNumber()}
     >
       {name}

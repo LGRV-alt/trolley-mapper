@@ -1,6 +1,6 @@
 function Header() {
   return (
-    <div className="flex justify-between items-center  text-xl h-16 bg-yellow-400 outline outline-black outline-4">
+    <div className="flex justify-between items-center border-b-4 text-white text-2xl h-16 bg-[#161617] ">
       <h1
         className="ml-6"
         onClick={() => {
@@ -9,12 +9,6 @@ function Header() {
       >
         Trolly Mapper
       </h1>
-
-      <ul>
-        <li className="mr-6 text-sm">
-          <button className="bg-white hover:bg-yellow-600">button</button>
-        </li>
-      </ul>
     </div>
   );
 }

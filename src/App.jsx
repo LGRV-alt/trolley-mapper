@@ -3,7 +3,7 @@ import Header from "./components/Header";
 
 function App() {
   return (
-    <div className="p-2 h-screen bg-red-500 flex flex-col ">
+    <div className="text-white h-screen ">
       <Header />
       <Content />
     </div>

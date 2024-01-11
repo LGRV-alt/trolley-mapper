@@ -19,7 +19,7 @@ function NewCustomerButton({ setCustomerList, customerList }) {
     setForm({ ...form, [key]: event.target.value });
   }
   return (
-    <div className="border-2 border-white min-w-60 bg-slate-700 text-white">
+    <div className="border-r-2  min-w-60 bg-slate-700 text-white">
       <form className="grid grid-cols-1 grid-rows-3 mt-4 ml-4">
         <div className="w-full flex flex-col">
           <label className="flex mb-1 ">Customer Name</label>
@@ -57,7 +57,7 @@ function NewCustomerButton({ setCustomerList, customerList }) {
         </div>
         <button
           type="button"
-          className=" w-2/3 mb-3 h-8 bg-black text-white hover:bg-white hover:text-black"
+          className=" rounded w-2/3 mb-3 h-8 bg-black text-white hover:text-black hover:bg-yellow-400"
           onClick={() => handleCreate()}
         >
           create
