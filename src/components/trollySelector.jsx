@@ -7,9 +7,13 @@ function TrollySelector({ lorry, setGridItems }) {
     setGridItems(arr);
   }
   return (
-    <div className="outline flex justify-evenly items-center outline-white w-1/2 h-7 mt-4">
+    <div className=" flex justify-evenly items-center w-1/2 h-7 mt-2">
       {lorry.map((item, index) => (
-        <button onClick={() => generateGrid(item)} key={index}>
+        <button
+          className="hover:bg-blue-500 hover:text-black w-10 outline"
+          onClick={() => generateGrid(item)}
+          key={index}
+        >
           {item}T
         </button>
       ))}

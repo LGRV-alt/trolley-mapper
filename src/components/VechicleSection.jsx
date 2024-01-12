@@ -25,12 +25,20 @@ function VechicleSection({ customerName }) {
   }
 
   return (
-    <div className=" p-2 flex content-center flex-col items-center">
-      <div>
-        <button onClick={handleLorry} className="mr-4">
-          lorry
+    <div className=" p-2 flex content-center flex-col items-center h-screen">
+      <div className="mb-2">
+        <button
+          onClick={handleLorry}
+          className="mr-4 text-lg bg-blue-600 w-14 hover:bg-blue-300"
+        >
+          Lorry
         </button>
-        <button onClick={handleTrailer}>trailer</button>
+        <button
+          onClick={handleTrailer}
+          className="text-lg bg-blue-600 w-14 hover:bg-blue-300"
+        >
+          Trailer
+        </button>
       </div>
       <TrollySelector lorry={lorry} setGridItems={setGridItems} />
       {vehicle === "lorry" ? (
