@@ -13,7 +13,7 @@ function CustomerSection({ onClick }) {
   });
   console.log("customerList:", customerList);
   return (
-    <div className="ml-4">
+    <div className="lg:ml-4">
       <div className="flex justify-center items-center">
         <button
           className="bg-blue-700 w-1/2 rounded mt-2 mb-2 hover:bg-blue-400"
@@ -24,7 +24,7 @@ function CustomerSection({ onClick }) {
       </div>
 
       {showCustomerList ? (
-        <div className=" w-full outline outline-2 grid grid-cols-2 grid-rows-1">
+        <div className=" lg:w-full w-screen lg:outline outline-2 grid grid-cols-2 grid-rows-1">
           <NewCustomerForm
             setCustomerList={setCustomerList}
             customerList={customerList}

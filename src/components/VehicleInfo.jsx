@@ -3,7 +3,7 @@ import "react-calendar/dist/Calendar.css";
 
 function VehicleInfo({ vehicleForm, setVehicleForm }) {
   return (
-    <div className=" bg-slate-700 min-w-60 text-white">
+    <div className=" bg-slate-700  min-w-60 text-white">
       <form className="grid grid-cols-1 grid-rows-3 mt-4 ml-4">
         <div className="w-full flex flex-col">
           <label className="flex justify-between w-full mb-1">

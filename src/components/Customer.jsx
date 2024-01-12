@@ -7,11 +7,13 @@ function Customer({ customerList, onClick }) {
         <div
           key={index}
           onClick={() => onClick([item.name])}
-          className=" w-1/2 h-12 grid grid-rows-1 grid-cols-[40%_10%_50%]  hover:text-blue-500 hover:cursor-pointer"
+          className=" md:w-1/2 w-full h-12 md:grid md:grid-rows-1 md:grid-cols-[40%_10%_50%] flex gap-2   hover:text-blue-500 hover:cursor-pointer"
         >
-          <h3 className="flex text-lg ml-2 items-center">{item.name}</h3>
+          <h3 className="flex lg:text-lg ml-2 items-center sm:text-base">
+            {item.name}
+          </h3>
           {item.trollies.length > 0 ? (
-            <p className=" text-red-500 flex justify-center items-center">
+            <p className="text-red-500 flex justify-center items-center">
               {" "}
               {item.trollies}T
             </p>

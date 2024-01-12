@@ -6,7 +6,7 @@ function Content() {
   const [customerValue, setCustomerValue] = useState("");
 
   return (
-    <div className="h-full grid grid-cols-2 grid-rows-1 bg-[#161617]">
+    <div className=" grid-cols-1 h-full grid  lg:grid-cols-2 lg:grid-rows-1 bg-[#161617]   ">
       <CustomerSection
         customerName={customerValue}
         onClick={setCustomerValue}
