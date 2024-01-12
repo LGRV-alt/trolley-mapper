@@ -5,7 +5,7 @@ import Customer from "./Customer";
 
 function CustomerSection({ onClick }) {
   const [customerList, setCustomerList] = useState([]);
-  const [showCustomerList, setShowCustomerList] = useState(true);
+  const [showCustomerList, setShowCustomerList] = useState(false);
   const [vehicleForm, setVehicleForm] = useState({
     driver: "",
     vehicleReg: "",
@@ -35,11 +35,13 @@ function CustomerSection({ onClick }) {
           />
         </div>
       ) : null}
-
-      {/* TODO - Change this to a component for each customer */}
-
+      <h3
+        className="ml-2 mt-2 hover:text-blue-500 hover:cursor-pointer"
+        onClick={() => onClick("Blank Trolley")}
+      >
+        Blank Trolley
+      </h3>
       <div>
-        <h2>Customers</h2>
         <Customer customerList={customerList} onClick={onClick} />
       </div>
     </div>
