@@ -1,6 +1,7 @@
 import { useState } from "react";
 import NewCustomerForm from "./NewCustomerForm";
 import VehicleInfo from "./VehicleInfo";
+import Customer from "./Customer";
 
 function CustomerSection({ onClick }) {
   const [customerList, setCustomerList] = useState([]);
@@ -15,7 +16,7 @@ function CustomerSection({ onClick }) {
     <div className="ml-4">
       <div className="flex justify-center items-center">
         <button
-          className="bg-blue-700 w-1/2 rounded mt-2 mb-2"
+          className="bg-blue-700 w-1/2 rounded mt-2 mb-2 hover:bg-blue-400"
           onClick={() => setShowCustomerList(!showCustomerList)}
         >
           Add Customer
@@ -35,18 +36,11 @@ function CustomerSection({ onClick }) {
         </div>
       ) : null}
 
-      {/* TODO - Section to add a date reg etc */}
       {/* TODO - Change this to a component for each customer */}
+
       <div>
         <h2>Customers</h2>
-        <h3>{customerList.name}</h3>
-        {customerList.map((item, index) => (
-          <div key={index} onClick={() => onClick([item.name])}>
-            <h3>
-              {item.name} {item.trollies} {item.extras}
-            </h3>
-          </div>
-        ))}
+        <Customer customerList={customerList} onClick={onClick} />
       </div>
     </div>
   );

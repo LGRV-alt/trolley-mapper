@@ -33,7 +33,7 @@ function VehicleInfo({ vehicleForm, setVehicleForm }) {
             }
           />
         </div>
-        <div className="w-full">
+        <div className="w-full mt-2">
           <input
             type="date"
             className="bg-transparent flex justify-center items-center "
