@@ -3,10 +3,10 @@ import GridItem from "./GirdItem";
 function LorryMap({ customerName, grid }) {
   return (
     <div
-      className={` outline outline-white h-2/3 w-2/3 mt-8 grid grid-cols-4 grid-rows-6 `}
+      className={` border-2 lg:h-2/3 lg:w-2/3 w-11/12 h-11/12 mt-8 grid grid-cols-4 grid-rows-6 `}
     >
       {grid.map((item, index) => (
-        <div key="2" className="outline outline-white">
+        <div key="2" className="border-2">
           <GridItem value={customerName} index={index} />
         </div>
       ))}
