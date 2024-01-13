@@ -14,10 +14,10 @@ function Customer({ customerList, setCustomerList, onClick }) {
         <div
           key={index}
           onClick={() => onClick([item.name])}
-          className=" lg:w-1/2 w-full h-12 lg:grid lg:grid-rows-1 lg:grid-cols-[20%_40%_30%_20%] flex gap-2"
+          className=" lg:w-1/2 w-full h-6 lg:h-11 lg:grid lg:grid-rows-1 lg:grid-cols-[20%_40%_30%_20%] flex gap-2"
         >
           <button
-            className="text-red-600 hover: text-red-500"
+            className="text-red-600 hover:text-red-500"
             onClick={() => handleDel(index)}
           >
             X
