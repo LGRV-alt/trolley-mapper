@@ -1,14 +1,21 @@
 // TODO - add a number value on the customers which changes the order that they appear
 
-function Customer({ customerList, onClick }) {
+function Customer({ customerList, setCustomerList, onClick }) {
+  function handleDel(index) {
+    const newList = customerList.filter(
+      (item) => customerList.indexOf(item) !== index
+    );
+    setCustomerList(newList);
+  }
   return (
     <div>
       {customerList.map((item, index) => (
         <div
           key={index}
           onClick={() => onClick([item.name])}
-          className=" lg:w-1/2 w-full h-12 lg:grid lg:grid-rows-1 lg:grid-cols-[40%_30%_20%] flex gap-2"
+          className=" lg:w-1/2 w-full h-12 lg:grid lg:grid-rows-1 lg:grid-cols-[20%_40%_30%_20%] flex gap-2"
         >
+          <button onClick={() => handleDel(index)}>Click me</button>
           <h3 className="flex lg:text-lg ml-2 items-center sm:text-base  hover:text-blue-500 hover:cursor-pointer">
             {item.name}
           </h3>

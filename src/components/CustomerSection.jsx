@@ -42,7 +42,11 @@ function CustomerSection({ onClick }) {
         Blank Trolley
       </h3>
       <div>
-        <Customer customerList={customerList} onClick={onClick} />
+        <Customer
+          customerList={customerList}
+          setCustomerList={setCustomerList}
+          onClick={onClick}
+        />
       </div>
     </div>
   );
