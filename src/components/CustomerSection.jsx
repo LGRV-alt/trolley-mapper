@@ -35,13 +35,14 @@ function CustomerSection({ onClick }) {
           />
         </div>
       ) : null}
-      <h3
-        className="ml-2 mt-2 hover:text-blue-500 hover:cursor-pointer"
-        onClick={() => onClick("Blank Trolley")}
-      >
-        Blank Trolley
-      </h3>
-      <div className="">
+
+      <div className="bg-[#232323] rounded-3xl p-3 m-2">
+        <h3
+          className="lg:ml-2 ml-5 w-[70%] text-left  lg:w-[90%] lg:text-end  hover:text-blue-500 hover:cursor-pointer"
+          onClick={() => onClick("Blank Trolley")}
+        >
+          Blank Trolley
+        </h3>
         <Customer
           customerList={customerList}
           setCustomerList={setCustomerList}
