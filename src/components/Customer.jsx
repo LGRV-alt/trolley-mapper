@@ -7,7 +7,7 @@ function Customer({ customerList, onClick }) {
         <div
           key={index}
           onClick={() => onClick([item.name])}
-          className=" md:w-1/2 w-full h-12 md:grid md:grid-rows-1 md:grid-cols-[40%_10%_50%] flex gap-2   hover:text-blue-500 hover:cursor-pointer"
+          className=" lg:w-1/2 w-full h-12 lg:grid lg:grid-rows-1 lg:grid-cols-[40%_30%_20%] flex gap-2   hover:text-blue-500 hover:cursor-pointer"
         >
           <h3 className="flex lg:text-lg ml-2 items-center sm:text-base">
             {item.name}
@@ -18,7 +18,7 @@ function Customer({ customerList, onClick }) {
               {item.trollies}T
             </p>
           ) : null}
-          <p className="text-red-500 flex items-center">{item.extras}</p>
+          <p className="text-red-500 flex  items-center">{item.extras}</p>
         </div>
       ))}
     </div>
