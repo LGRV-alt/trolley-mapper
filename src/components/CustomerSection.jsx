@@ -24,7 +24,7 @@ function CustomerSection({ onClick }) {
       </div>
 
       {showCustomerList ? (
-        <div className=" lg:w-full w-screen lg:outline outline-2 grid grid-cols-2 grid-rows-1">
+        <div className=" lg:w-full w-screen grid grid-cols-2 grid-rows-1">
           <NewCustomerForm
             setCustomerList={setCustomerList}
             customerList={customerList}
