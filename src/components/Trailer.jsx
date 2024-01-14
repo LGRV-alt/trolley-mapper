@@ -9,7 +9,7 @@ function TrailerMap({ customerName, grid }) {
       <div className="border-2 border-b-0 border-t-0 border-white w-1/4 h-20">
         {" "}
       </div>
-      <div className="border-2 border-t-2  w-2/3 lg:h-2/3 h-1/2 grid grid-cols-3 grid-rows-3">
+      <div className="border-2 border-t-2  w-full lg:h-2/3 h-1/2 grid grid-cols-3 grid-rows-3">
         {grid.map((item, index) => (
           <div key="2" className="border-2">
             <GridItem value={customerName} index={index} />
