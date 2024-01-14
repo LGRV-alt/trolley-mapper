@@ -36,7 +36,7 @@ function CustomerSection({ onClick }) {
         </div>
       ) : null}
 
-      <div className="bg-[#232323] rounded-3xl p-3 m-2">
+      <div className="bg-[#232323] rounded-3xl p-3 m-2 lg:ml-0 lg:mr-0">
         <h3
           className="lg:ml-2 ml-5 w-[70%] text-left  lg:w-[90%] lg:text-end  hover:text-blue-500 hover:cursor-pointer"
           onClick={() => onClick("Blank Trolley")}
