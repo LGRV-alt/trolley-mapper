@@ -3,6 +3,7 @@ import GridItem from "./GirdItem";
 function TrailerMap({ customerName, grid }) {
   return (
     <div
+      id="trailerMap"
       className={` lg:h-2/3 lg:w-2/3 w-11/12 h-full mt-8 flex flex-col content-center items-center `}
     >
       <div className="border-2 border-b-2 border-white w-full h-20"> </div>

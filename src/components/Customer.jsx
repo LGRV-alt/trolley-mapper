@@ -28,9 +28,9 @@ function Customer({ customerList, setCustomerList, onClick }) {
             </h3>
           </div>
 
-          <div className="flex flex-row gap-2">
+          <div className="flex flex-row gap-2 ">
             {item.trollies ? (
-              <p className="text-red-500 flex justify-center items-center ">
+              <p className="text-red-500 flex justify-center items-center  ">
                 {" "}
                 {item.trollies}T
               </p>
