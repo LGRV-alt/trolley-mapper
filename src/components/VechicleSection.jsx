@@ -35,7 +35,7 @@ function VechicleSection({ customerName }) {
         </button>
         <button
           onClick={handleTrailer}
-          className="text-lg rounded w-14 dark:bg-dark-button-main hover:bg-blue-300"
+          className="text-lg rounded w-14 dark:bg-dark-button-main hover:bg-button-main-hover"
         >
           Trailer
         </button>

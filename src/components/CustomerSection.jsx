@@ -3,7 +3,7 @@ import NewCustomerForm from "./NewCustomerForm";
 import VehicleInfo from "./VehicleInfo";
 import Customer from "./Customer";
 
-function CustomerSection({ onClick }) {
+function CustomerSection({ onClick, darkMode, toggleDarkMode }) {
   const [customerList, setCustomerList] = useState([]);
   const [showCustomerList, setShowCustomerList] = useState(false);
   const [vehicleForm, setVehicleForm] = useState({
@@ -12,6 +12,7 @@ function CustomerSection({ onClick }) {
     date: "",
   });
   console.log("customerList:", customerList);
+
   return (
     <div className="lg:ml-4">
       <div className="flex justify-center items-center gap-1">
@@ -21,8 +22,11 @@ function CustomerSection({ onClick }) {
         >
           Add Customer
         </button>
-        <button className="dark:bg-orange-700 border-2 dark:border-none w-[20%] rounded-xl  mt-2 mb-2 hover:bg-orange-400">
-          Finish
+        <button
+          className="dark:bg-orange-700 border-2 dark:border-none w-[20%] rounded-xl  mt-2 mb-2 hover:bg-orange-400"
+          onClick={toggleDarkMode}
+        >
+          {darkMode ? "finish" : "Edit"}
         </button>
       </div>
 
