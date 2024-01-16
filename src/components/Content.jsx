@@ -2,7 +2,7 @@ import VechicleSection from "./VechicleSection";
 import CustomerSection from "./CustomerSection";
 import { useState } from "react";
 
-function Content({ darkMode, toggleDarkMode }) {
+function Content({ printMode, togglePrintMode }) {
   const [customerValue, setCustomerValue] = useState("");
 
   return (
@@ -13,11 +13,11 @@ function Content({ darkMode, toggleDarkMode }) {
       <CustomerSection
         customerName={customerValue}
         onClick={setCustomerValue}
-        darkMode={darkMode}
-        toggleDarkMode={toggleDarkMode}
+        printMode={printMode}
+        togglePrintMode={togglePrintMode}
       />
 
-      <VechicleSection customerName={customerValue} />
+      <VechicleSection customerName={customerValue} printMode={printMode} />
     </div>
   );
 }

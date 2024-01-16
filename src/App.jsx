@@ -3,15 +3,15 @@ import Content from "./components/Content";
 import Header from "./components/Header";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+  const [printMode, setPrintMode] = useState(true);
+  const togglePrintMode = () => {
+    setPrintMode(!printMode);
   };
   return (
-    <div id="mainContent" className={`${darkMode && "dark"}`}>
+    <div id="mainContent" className={`${printMode && "dark"}`}>
       <div className="dark:text-dark-secondary dark:bg-dark-primary h-full bg-light-primary text-light-secondary">
-        <Header darkMode={darkMode} />
-        <Content toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
+        <Header printMode={printMode} />
+        <Content togglePrintMode={togglePrintMode} printMode={printMode} />
       </div>
     </div>
   );

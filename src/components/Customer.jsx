@@ -14,7 +14,7 @@ function Customer({ customerList, setCustomerList, onClick }) {
         <div
           key={index}
           onClick={() => onClick([item.name])}
-          className="  w-full h-6 lg:h-11 grid grid-rows-1 grid-cols-[3fr_1fr]"
+          className="  w-full h-6 lg:h-11 grid grid-rows-1 grid-cols-[3fr_1fr] border-b-2"
         >
           <div className="flex flex-row lg:gap-1 ">
             <button

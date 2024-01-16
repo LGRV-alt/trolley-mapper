@@ -3,7 +3,7 @@ import NewCustomerForm from "./NewCustomerForm";
 import VehicleInfo from "./VehicleInfo";
 import Customer from "./Customer";
 
-function CustomerSection({ onClick, darkMode, toggleDarkMode }) {
+function CustomerSection({ onClick, printMode, togglePrintMode }) {
   const [customerList, setCustomerList] = useState([]);
   const [showCustomerList, setShowCustomerList] = useState(false);
   const [vehicleForm, setVehicleForm] = useState({
@@ -24,9 +24,9 @@ function CustomerSection({ onClick, darkMode, toggleDarkMode }) {
         </button>
         <button
           className="dark:bg-orange-700 border-2 dark:border-none w-[20%] rounded-xl  mt-2 mb-2 hover:bg-orange-400"
-          onClick={toggleDarkMode}
+          onClick={togglePrintMode}
         >
-          {darkMode ? "finish" : "Edit"}
+          {printMode ? "finish" : "Edit"}
         </button>
       </div>
 
