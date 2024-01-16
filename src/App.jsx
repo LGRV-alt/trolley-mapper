@@ -1,17 +1,77 @@
 import { useState } from "react";
 import Content from "./components/Content";
 import Header from "./components/Header";
+import generatePDF, { Resolution, Margin } from "react-to-pdf";
+
+// First
+// import { usePDF } from "react-to-pdf";
 
 function App() {
   const [printMode, setPrintMode] = useState(true);
+  const [vehicleForm, setVehicleForm] = useState({
+    driver: "",
+    vehicleReg: "",
+    date: "",
+  });
   const togglePrintMode = () => {
     setPrintMode(!printMode);
   };
+
+  // First
+  // const { toPDF, targetRef } = usePDF({
+  //   filename: `${vehicleForm.driver}-${vehicleForm.date}.pdf`,
+  // });
+
+  const options = {
+    filename: `${vehicleForm.driver}_${vehicleForm.date}.pdf`,
+    method: "save",
+    // default is Resolution.MEDIUM = 3, which should be enough, higher values
+    // increases the image quality but also the size of the PDF, so be careful
+    // using values higher than 10 when having multiple pages generated, it
+    // might cause the page to crash or hang.
+    resolution: Resolution.MEDIUM,
+    page: {
+      // margin is in MM, default is Margin.NONE = 0
+      margin: Margin.SMALL,
+      // default is 'A4'
+      format: "A4",
+      // default is 'portrait'
+      orientation: "landscape",
+    },
+    canvas: {
+      // default is 'image/jpeg' for better size performance
+      mimeType: "image/jpeg",
+      qualityRatio: 1,
+    },
+    // Customize any value passed to the jsPDF instance and html2canvas
+    // function. You probably will not need this and things can break,
+    // so use with caution.
+    overrides: {
+      // see https://artskydj.github.io/jsPDF/docs/jsPDF.html for more options
+      pdf: {
+        compress: true,
+      },
+      // see https://html2canvas.hertzen.com/configuration for more options
+      canvas: {
+        useCORS: true,
+      },
+    },
+  };
+
+  const getTargetElement = () => document.getElementById("mainContent");
+  const downloadPdf = () => generatePDF(getTargetElement, options);
+
   return (
     <div id="mainContent" className={`${printMode && "dark"}`}>
       <div className="dark:text-dark-secondary dark:bg-dark-primary h-full bg-light-primary text-light-secondary">
-        <Header printMode={printMode} />
-        <Content togglePrintMode={togglePrintMode} printMode={printMode} />
+        <Header printMode={printMode} downloadPdf={downloadPdf} />
+
+        <Content
+          togglePrintMode={togglePrintMode}
+          printMode={printMode}
+          vehicleForm={vehicleForm}
+          setVehicleForm={setVehicleForm}
+        />
       </div>
     </div>
   );

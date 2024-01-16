@@ -1,6 +1,9 @@
-function Header({ printMode }) {
+function Header({ printMode, targetRef, downloadPdf }) {
   return (
-    <div className="flex justify-between items-center border-b-2 lg:mb-4 text-2xl h-16 ">
+    <div
+      ref={targetRef}
+      className="flex justify-between items-center border-b-2 lg:mb-4 text-2xl h-16 "
+    >
       <div className="flex justify-center items-center">
         <img src="/src/assets/logo.svg" alt="" className="lg:ml-4 ml-2" />
         <h1
@@ -19,7 +22,13 @@ function Header({ printMode }) {
             <img src="/src/assets/google-maps.svg" alt="" />
           </a>
         ) : (
-          <img src="/src/assets/pdf.svg" alt="" />
+          <button>
+            <img
+              src="/src/assets/pdf.svg"
+              alt=""
+              onClick={() => downloadPdf()}
+            />
+          </button>
         )}
       </div>
     </div>

@@ -2,7 +2,7 @@ import VechicleSection from "./VechicleSection";
 import CustomerSection from "./CustomerSection";
 import { useState } from "react";
 
-function Content({ printMode, togglePrintMode }) {
+function Content({ printMode, togglePrintMode, vehicleForm, setVehicleForm }) {
   const [customerValue, setCustomerValue] = useState("");
 
   return (
@@ -15,6 +15,8 @@ function Content({ printMode, togglePrintMode }) {
         onClick={setCustomerValue}
         printMode={printMode}
         togglePrintMode={togglePrintMode}
+        vehicleForm={vehicleForm}
+        setVehicleForm={setVehicleForm}
       />
 
       <VechicleSection customerName={customerValue} printMode={printMode} />

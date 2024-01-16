@@ -3,27 +3,29 @@ import NewCustomerForm from "./NewCustomerForm";
 import VehicleInfo from "./VehicleInfo";
 import Customer from "./Customer";
 
-function CustomerSection({ onClick, printMode, togglePrintMode }) {
+function CustomerSection({
+  onClick,
+  printMode,
+  togglePrintMode,
+  vehicleForm,
+  setVehicleForm,
+}) {
   const [customerList, setCustomerList] = useState([]);
   const [showCustomerList, setShowCustomerList] = useState(false);
-  const [vehicleForm, setVehicleForm] = useState({
-    driver: "",
-    vehicleReg: "",
-    date: "",
-  });
+
   console.log("customerList:", customerList);
 
   return (
     <div className="lg:ml-4">
       <div className="flex justify-center items-center gap-1">
         <button
-          className="dark:bg-dark-button-main border-2 dark:border-none w-[70%] rounded-xl mt-2 mb-2 hover:bg-button-main-hover"
+          className="dark:bg-dark-button-main border-2 dark:border-none w-[70%] rounded-xl mt-2 mb-2 p-2 hover:bg-button-main-hover"
           onClick={() => setShowCustomerList(!showCustomerList)}
         >
           Add Customer
         </button>
         <button
-          className="dark:bg-orange-700 border-2 dark:border-none w-[20%] rounded-xl  mt-2 mb-2 hover:bg-orange-400"
+          className="dark:bg-orange-700 border-2 dark:border-none w-[20%] p-2 rounded-xl  mt-2 mb-2 hover:bg-orange-400"
           onClick={togglePrintMode}
         >
           {printMode ? "finish" : "Edit"}
