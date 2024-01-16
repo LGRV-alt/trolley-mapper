@@ -6,7 +6,7 @@ function LorryMap({ customerName, grid }) {
       className={` border-2 lg:h-2/3 lg:w-2/3 w-full h-2/4 mt-8 grid grid-cols-4 grid-rows-6 `}
     >
       {grid.map((item, index) => (
-        <div key="2" className="border-2 ">
+        <div key={index} className="border-2 ">
           <GridItem value={customerName} index={index} />
         </div>
       ))}

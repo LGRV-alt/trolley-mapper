@@ -1,3 +1,7 @@
+import { GoogleMapsLogo } from "./GoogleMapsLogo.jsx";
+import { Logo } from "./logo.jsx";
+import { PdfLogo } from "./PdfLogo.jsx";
+
 function Header({ printMode, targetRef, downloadPdf }) {
   return (
     <div
@@ -5,24 +9,27 @@ function Header({ printMode, targetRef, downloadPdf }) {
       className="flex justify-between items-center border-b-2 lg:mb-4 text-2xl h-16 "
     >
       <div className="flex justify-center items-center">
-        <img src="/src/assets/logo.svg" alt="" className="lg:ml-4 ml-2" />
+        <Logo />
         <h1
           className=""
           onClick={() => {
             console.log("clicked");
           }}
         >
-          Trolley Mapper
+          Trolley Mappers
         </h1>
       </div>
 
       <div className="lg:mr-5 mr-2 flex gap-2">
         {printMode ? (
           <a href="https://www.google.com/maps" target="blank">
-            <img src="/src/assets/google-maps.svg" alt="" />
+            <GoogleMapsLogo />
           </a>
         ) : (
           <button>
+            <div>
+              <PdfLogo />
+            </div>
             <img
               src="/src/assets/pdf.svg"
               alt=""

@@ -13,8 +13,6 @@ function CustomerSection({
   const [customerList, setCustomerList] = useState([]);
   const [showCustomerList, setShowCustomerList] = useState(false);
 
-  console.log("customerList:", customerList);
-
   return (
     <div className="lg:ml-4">
       <div className="flex justify-center items-center gap-1">

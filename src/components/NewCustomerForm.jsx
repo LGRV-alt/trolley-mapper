@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function NewCustomerButton({ setCustomerList, customerList }) {
   const [customer, setCustomer] = useState({});
-  const [form, setForm] = useState({});
+  const [form, setForm] = useState({ name: "", trollies: "", extras: "" });
 
   // TODO - handle invalid customer entry
   function handleCreate() {
