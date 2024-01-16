@@ -36,7 +36,7 @@ function VehicleInfo({ vehicleForm, setVehicleForm }) {
         <div className="w-full mt-2">
           <input
             type="date"
-            className="bg-transparent flex justify-center items-center "
+            className=" bg-transparent flex justify-center items-center "
             onChange={(e) =>
               setVehicleForm({ ...vehicleForm, date: e.target.value })
             }

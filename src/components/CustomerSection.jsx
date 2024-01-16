@@ -26,12 +26,12 @@ function CustomerSection({
           className="dark:bg-orange-700 border-2 dark:border-none w-[20%] p-2 rounded-xl  mt-2 mb-2 hover:bg-orange-400"
           onClick={togglePrintMode}
         >
-          {printMode ? "finish" : "Edit"}
+          {printMode ? "Finish" : "Edit"}
         </button>
       </div>
 
       {showCustomerList ? (
-        <div className=" lg:w-full w-screen grid grid-cols-2 grid-rows-1">
+        <div className=" lg:w-full w-full grid grid-cols-2 grid-rows-1">
           <NewCustomerForm
             setCustomerList={setCustomerList}
             customerList={customerList}
