@@ -4,7 +4,10 @@ import Header from "./components/Header";
 
 function App() {
   return (
-    <div id="mainContent" className="text-white h-screen">
+    <div
+      id="mainContent"
+      className=" dark:text-dark-secondary dark:bg-dark-primary h-screen  bg-light-primary text-light-secondary"
+    >
       <Header />
       <Content />
     </div>

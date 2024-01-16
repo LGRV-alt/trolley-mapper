@@ -8,7 +8,7 @@ function Content() {
   return (
     <div
       id="content"
-      className=" grid-cols-1 h-full grid  lg:grid-cols-2 lg:grid-rows-1 bg-[#161617]   "
+      className=" grid-cols-1 h-full grid  lg:grid-cols-2 lg:grid-rows-1 "
     >
       <CustomerSection
         customerName={customerValue}

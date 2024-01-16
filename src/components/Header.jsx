@@ -1,6 +1,6 @@
 function Header() {
   return (
-    <div className="flex justify-between items-center border-b-2 lg:mb-4 text-white text-2xl h-16 bg-[#161617] ">
+    <div className="flex justify-between items-center border-b-2 lg:mb-4 text-2xl h-16 ">
       <div className="flex justify-center items-center">
         <img src="/src/assets/logo.svg" alt="" className="lg:ml-4 ml-2" />
         <h1
