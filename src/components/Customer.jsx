@@ -18,13 +18,13 @@ function Customer({ customerList, setCustomerList, onClick }) {
         >
           <div className="flex flex-row gap-1 ">
             <button
-              className="w-2/12  text-red-600 hover:bg-red-600 hover:text-white hover:rounded-full "
+              className="w-2/12  text-transparent dark:text-red-600 hover:bg-red-600 hover:text-white hover:rounded-full "
               onClick={() => handleDel(index)}
             >
               X
             </button>
             <h3 className="flex lg:text-lg   items-center sm:text-base  hover:text-blue-500 hover:cursor-pointer">
-              {item.name}
+              {index + 1} - {item.name}
             </h3>
           </div>
 
@@ -35,7 +35,7 @@ function Customer({ customerList, setCustomerList, onClick }) {
                 {item.trollies}T
               </p>
             ) : null}
-            <p className="text-yellow-500 flex items-center">{item.extras}</p>
+            <p className="text-amber-600 flex items-center">{item.extras}</p>
           </div>
         </div>
       ))}

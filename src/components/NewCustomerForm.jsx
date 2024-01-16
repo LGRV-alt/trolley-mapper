@@ -19,12 +19,12 @@ function NewCustomerButton({ setCustomerList, customerList }) {
     setForm({ ...form, [key]: event.target.value });
   }
   return (
-    <div className=" rounded-3xl ml-2 lg:ml-0 lg:min-w-60 bg-[#232323] text-white">
+    <div className=" rounded-3xl ml-2 lg:ml-0 lg:min-w-60 bg-light-customer-input dark:bg-dark-customer-input">
       <form className="grid grid-cols-1 grid-rows-3 mt-4 ml-4">
         <div className="w-full flex flex-col">
           <label className="flex mb-1 ">Customer Name</label>
           <input
-            className="mb-2 lg:w-2/3 w-11/12 rounded border-2 p-1 bg-transparent hover:border-blue-800"
+            className="mb-2 lg:w-2/3 w-11/12 rounded border-2 border-black dark:border-white p-1 bg-transparent hover:border-blue-800"
             value={form.name}
             type="text"
             name="name"
@@ -35,7 +35,7 @@ function NewCustomerButton({ setCustomerList, customerList }) {
         <div className="w-full flex flex-col ">
           <label className="flex mb-1">Extras</label>
           <input
-            className="mb-2 lg:w-2/3 w-11/12 rounded  border-2  p-1 bg-transparent hover:border-blue-800"
+            className="mb-2 lg:w-2/3 w-11/12 rounded  border-2  border-black dark:border-white p-1 bg-transparent hover:border-blue-800"
             value={form.extras}
             type="text"
             name="extras"
@@ -46,7 +46,7 @@ function NewCustomerButton({ setCustomerList, customerList }) {
         <div className="w-full flex  flex-col ">
           <label className="flex mb-1 ">Trollies</label>
           <input
-            className="mb-2 w-14 rounded border-2 p-1 bg-transparent hover:border-blue-800"
+            className="mb-2 w-14 rounded border-2  border-black dark:border-white p-1 bg-transparent hover:border-blue-800"
             value={form.trollies}
             min="0"
             type="number"
@@ -57,7 +57,7 @@ function NewCustomerButton({ setCustomerList, customerList }) {
         </div>
         <button
           type="button"
-          className=" rounded lg:w-2/3 w-11/12 mb-3 h-8 border-2 bg-black text-white hover:text-black hover:bg-yellow-400"
+          className=" rounded-xl lg:w-2/3 w-11/12 mb-3 h-8 border-2 bg-black text-white hover:text-black hover:bg-yellow-400"
           onClick={() => handleCreate()}
         >
           create

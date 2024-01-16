@@ -29,13 +29,13 @@ function VechicleSection({ customerName }) {
       <div className="mb-2">
         <button
           onClick={handleLorry}
-          className="mr-4 text-lg rounded bg-blue-600 w-14 hover:bg-blue-300"
+          className="mr-4 text-lg rounded dark:bg-dark-button-main w-14 hover:bg-button-main-hover"
         >
           Lorry
         </button>
         <button
           onClick={handleTrailer}
-          className="text-lg rounded bg-blue-600 w-14 hover:bg-blue-300"
+          className="text-lg rounded w-14 dark:bg-dark-button-main hover:bg-blue-300"
         >
           Trailer
         </button>
