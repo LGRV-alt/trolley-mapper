@@ -16,7 +16,7 @@ function Header({ printMode, targetRef, downloadPdf }) {
             console.log("clicked");
           }}
         >
-          Trolley Mappers
+          Trolley Mapper
         </h1>
       </div>
 
@@ -27,7 +27,7 @@ function Header({ printMode, targetRef, downloadPdf }) {
           </a>
         ) : (
           <button>
-            <div>
+            <div className="cursor-pointer" onClick={() => downloadPdf()}>
               <PdfLogo />
             </div>
             <img

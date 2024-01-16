@@ -3,9 +3,6 @@ import Content from "./components/Content";
 import Header from "./components/Header";
 import generatePDF, { Resolution, Margin } from "react-to-pdf";
 
-// First
-// import { usePDF } from "react-to-pdf";
-
 function App() {
   const [printMode, setPrintMode] = useState(true);
   const [vehicleForm, setVehicleForm] = useState({
@@ -16,11 +13,6 @@ function App() {
   const togglePrintMode = () => {
     setPrintMode(!printMode);
   };
-
-  // First
-  // const { toPDF, targetRef } = usePDF({
-  //   filename: `${vehicleForm.driver}-${vehicleForm.date}.pdf`,
-  // });
 
   const options = {
     filename: `${vehicleForm.driver}_${vehicleForm.date}.pdf`,
