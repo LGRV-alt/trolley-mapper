@@ -30,11 +30,6 @@ function Header({ printMode, targetRef, downloadPdf }) {
             <div className="cursor-pointer" onClick={() => downloadPdf()}>
               <PdfLogo />
             </div>
-            <img
-              src="/src/assets/pdf.svg"
-              alt=""
-              onClick={() => downloadPdf()}
-            />
           </button>
         )}
       </div>

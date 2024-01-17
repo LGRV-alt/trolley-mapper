@@ -19,7 +19,7 @@
 html {
   background-color: white;
 }
-
+/* 
 input[type="date"] {
   appearance: none;
   -webkit-appearance: none;
@@ -31,4 +31,24 @@ input[type="date"] {
   padding: 5px;
   display: inline-block !important;
   visibility: visible !important;
+} */
+
+input[type="date"] {
+  position: relative;
+}
+::-webkit-datetime-edit,
+::-webkit-clear-button,
+::-webkit-calendar-picker-indicator {
+  position: absolute;
+}
+::-webkit-clear-button {
+  right: 1.54em;
+}
+::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+::-webkit-calendar-picker-indicator {
+  right: 0;
+  padding: 0.539em 0.34em;
 }

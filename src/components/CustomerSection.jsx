@@ -24,7 +24,10 @@ function CustomerSection({
         </button>
         <button
           className="dark:bg-orange-700 border-2 dark:border-none w-[20%] p-2 rounded-xl  mt-2 mb-2 hover:bg-orange-400"
-          onClick={togglePrintMode}
+          onClick={() => {
+            togglePrintMode();
+            setShowCustomerList(false);
+          }}
         >
           {printMode ? "Finish" : "Edit"}
         </button>
