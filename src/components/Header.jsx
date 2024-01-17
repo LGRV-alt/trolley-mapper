@@ -6,7 +6,7 @@ function Header({ printMode, targetRef, downloadPdf }) {
   return (
     <div
       ref={targetRef}
-      className="flex justify-between items-center border-b-2 lg:mb-4 text-2xl h-16 "
+      className=" flex justify-between items-center border-b-2 lg:mb-4 text-2xl h-16 "
     >
       <div className="flex justify-center items-center">
         <Logo />
