@@ -8,7 +8,7 @@ function Header({ printMode, targetRef, downloadPdf }) {
       ref={targetRef}
       className=" flex justify-between items-center border-b-2 lg:mb-4 text-2xl h-16 "
     >
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center ml-4 items-center">
         <Logo />
         <h1
           className=""
