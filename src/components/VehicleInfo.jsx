@@ -4,6 +4,7 @@ import "react-calendar/dist/Calendar.css";
 function VehicleInfo({ vehicleForm, setVehicleForm }) {
   return (
     <div className="  rounded-3xl ml-2 mr-2 lg:min-w-60  bg-light-customer-input dark:bg-dark-customer-input">
+      {console.log(vehicleForm)}
       <form className="grid grid-cols-1 grid-rows-3 mt-4 ml-4">
         <div className="w-full flex flex-col">
           <label className="flex justify-between w-full mb-1">

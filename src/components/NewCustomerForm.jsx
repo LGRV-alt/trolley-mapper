@@ -4,12 +4,10 @@ function NewCustomerButton({ setCustomerList, customerList }) {
   const [customer, setCustomer] = useState({});
   const [form, setForm] = useState({ name: "", trollies: "", extras: "" });
 
-  // TODO - handle invalid customer entry
   function handleCreate() {
     if (form.name.length < 1) {
-      alert("needs a name");
-    }
-    setCustomerList([...customerList, form]);
+      alert("Customer Name - Needs a value");
+    } else setCustomerList([...customerList, form]);
     setCustomer({});
     setForm({ name: "", trollies: "", extras: "" });
   }

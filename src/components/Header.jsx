@@ -9,7 +9,9 @@ function Header({ printMode, targetRef, downloadPdf }) {
       className=" flex justify-between items-center border-b-2 lg:mb-4 text-2xl h-16 "
     >
       <div className="flex justify-center ml-4 items-center">
-        <Logo />
+        <a href="https://lgrv-alt.github.io/trolley-mapper/">
+          <Logo />
+        </a>
         <h1
           className=""
           onClick={() => {
