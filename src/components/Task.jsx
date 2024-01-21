@@ -35,7 +35,7 @@ export const Task = ({
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, tasks);
+  }, [tasks]);
   //   ------------------------------------------
 
   return (
