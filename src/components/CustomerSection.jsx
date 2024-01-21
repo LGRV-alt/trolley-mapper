@@ -23,9 +23,15 @@ function CustomerSection({
 }) {
   const [customerList, setCustomerList] = useState([]);
   const [showCustomerList, setShowCustomerList] = useState(false);
+
+  // ---------------------------------------------------------
+  const [practiceList, setPracticeList] = useState([
+    { id: 1, name: "Albar", extras: "2 Pallets", trollies: 2 },
+  ]);
+
   // ---------------------------------------------------------
   const [tasks, setTasks] = useState([
-    { id: 1, title: "lewis" },
+    { id: 1, title: "lewis", trollies: 2, extras: "2 Pallets" },
     { id: 2, title: "jen" },
     { id: 3, title: "stan" },
   ]);
@@ -44,14 +50,21 @@ function CustomerSection({
       return arrayMove(tasks, origonalPos, newPos);
     });
   };
+  const pointerSensor = useSensor(PointerSensor, {
+    activationConstraint: {
+      distance: 0.01,
+    },
+  });
 
   const sensors = useSensors(
     useSensor(PointerSensor),
     useSensor(TouchSensor),
+    pointerSensor,
     useSensor(KeyboardSensor, {
       coordinateGetter: sortableKeyboardCoordinates,
     })
   );
+
   // -----------------------------------------------------------------
   return (
     <div className="lg:ml-4">
@@ -108,7 +121,7 @@ function CustomerSection({
             setCustomerList={setCustomerList}
             onClick={onClick}
           /> */}
-          <Column tasks={tasks} />
+          <Column tasks={tasks} setTasks={setTasks} />
         </DndContext>
       </div>
     </div>
