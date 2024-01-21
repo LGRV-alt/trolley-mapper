@@ -2,6 +2,17 @@ import { useState } from "react";
 import NewCustomerForm from "./NewCustomerForm";
 import VehicleInfo from "./VehicleInfo";
 import Customer from "./Customer";
+import {
+  DndContext,
+  KeyboardSensor,
+  PointerSensor,
+  TouchSensor,
+  closestCorners,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
+import { Column } from "./Column";
+import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
 
 function CustomerSection({
   onClick,
@@ -12,7 +23,36 @@ function CustomerSection({
 }) {
   const [customerList, setCustomerList] = useState([]);
   const [showCustomerList, setShowCustomerList] = useState(false);
+  // ---------------------------------------------------------
+  const [tasks, setTasks] = useState([
+    { id: 1, title: "lewis" },
+    { id: 2, title: "jen" },
+    { id: 3, title: "stan" },
+  ]);
 
+  const getTaskPos = (id) => tasks.findIndex((task) => task.id === id);
+
+  const handleDragEnd = (event) => {
+    const { active, over } = event;
+
+    if (active.id === over.id) return;
+
+    setTasks((tasks) => {
+      const origonalPos = getTaskPos(active.id);
+      const newPos = getTaskPos(over.id);
+
+      return arrayMove(tasks, origonalPos, newPos);
+    });
+  };
+
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(TouchSensor),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  );
+  // -----------------------------------------------------------------
   return (
     <div className="lg:ml-4">
       <div className="flex justify-center items-center gap-1">
@@ -58,12 +98,18 @@ function CustomerSection({
         >
           Blank Trolley
         </h3>
-
-        <Customer
-          customerList={customerList}
-          setCustomerList={setCustomerList}
-          onClick={onClick}
-        />
+        <DndContext
+          sensors={sensors}
+          onDragEnd={handleDragEnd}
+          collisionDetection={closestCorners}
+        >
+          {/* <Customer
+            customerList={customerList}
+            setCustomerList={setCustomerList}
+            onClick={onClick}
+          /> */}
+          <Column tasks={tasks} />
+        </DndContext>
       </div>
     </div>
   );

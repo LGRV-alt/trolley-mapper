@@ -2,7 +2,11 @@ import { useState } from "react";
 
 function NewCustomerButton({ setCustomerList, customerList }) {
   const [customer, setCustomer] = useState({});
-  const [form, setForm] = useState({ name: "", trollies: "", extras: "" });
+  const [form, setForm] = useState({
+    name: "",
+    trollies: "",
+    extras: "",
+  });
 
   function handleCreate() {
     if (form.name.length < 1) {
