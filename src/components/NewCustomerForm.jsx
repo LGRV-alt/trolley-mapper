@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 function NewCustomerButton({ setCustomerList, customerList }) {
   const [customer, setCustomer] = useState({});
@@ -6,8 +7,10 @@ function NewCustomerButton({ setCustomerList, customerList }) {
     name: "",
     trollies: "",
     extras: "",
+    id: uuidv4(),
   });
 
+  const idName = form.name;
   function handleCreate() {
     if (form.name.length < 1) {
       alert("Customer Name - Needs a value");
@@ -31,7 +34,9 @@ function NewCustomerButton({ setCustomerList, customerList }) {
             type="text"
             name="name"
             placeholder="Landscapers"
-            onChange={(event) => handleFormInputs(event, "name")}
+            onChange={(event) => {
+              handleFormInputs(event, "name");
+            }}
           />
         </div>
         <div className="w-full flex flex-col ">
@@ -60,7 +65,12 @@ function NewCustomerButton({ setCustomerList, customerList }) {
         <button
           type="button"
           className=" rounded-xl lg:w-2/3 w-11/12 mb-3 h-8 border-2 bg-black text-white hover:text-black hover:bg-yellow-400"
-          onClick={() => handleCreate()}
+          onClick={() => {
+            setCustomer({ ...customer, name: "ali" });
+            setCustomerList([...customerList, customer]);
+            // setCustomer({});
+            // setForm({ name: "", trollies: "", extras: "" });
+          }}
         >
           create
         </button>

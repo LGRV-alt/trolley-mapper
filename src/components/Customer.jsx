@@ -24,7 +24,7 @@ function Customer({ customerList, setCustomerList, onClick }) {
               X
             </button>
             <h3 className="flex lg:text-lg   items-center sm:text-base  hover:text-blue-500 hover:cursor-pointer">
-              {index + 1} - {item.name}
+              {index + 1} - {item.name} {item.id}
             </h3>
           </div>
 

@@ -123,6 +123,13 @@ function CustomerSection({
           /> */}
           <Column tasks={tasks} setTasks={setTasks} />
         </DndContext>
+
+        <Customer
+          customerList={customerList}
+          setCustomerList={setCustomerList}
+          onClick={onClick}
+        />
+        {console.log("customer --", { customerList })}
       </div>
     </div>
   );
