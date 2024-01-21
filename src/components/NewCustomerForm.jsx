@@ -1,8 +1,8 @@
 import { useState } from "react";
+
 import { v4 as uuidv4 } from "uuid";
 
 function NewCustomerButton({ setCustomerList, customerList }) {
-  const [customer, setCustomer] = useState({});
   const [form, setForm] = useState({
     name: "",
     trollies: "",
@@ -10,17 +10,14 @@ function NewCustomerButton({ setCustomerList, customerList }) {
     id: uuidv4(),
   });
 
-  const idName = form.name;
   function handleCreate() {
     if (form.name.length < 1) {
       alert("Customer Name - Needs a value");
     } else setCustomerList([...customerList, form]);
-    setCustomer({});
-    setForm({ name: "", trollies: "", extras: "" });
+    setForm({ name: "", trollies: "", extras: "2 loose", id: uuidv4() });
   }
 
   function handleFormInputs(event, key) {
-    setCustomer({ ...customer, [key]: event.target.value });
     setForm({ ...form, [key]: event.target.value });
   }
   return (
@@ -66,10 +63,8 @@ function NewCustomerButton({ setCustomerList, customerList }) {
           type="button"
           className=" rounded-xl lg:w-2/3 w-11/12 mb-3 h-8 border-2 bg-black text-white hover:text-black hover:bg-yellow-400"
           onClick={() => {
-            setCustomer({ ...customer, name: "ali" });
-            setCustomerList([...customerList, customer]);
-            // setCustomer({});
-            // setForm({ name: "", trollies: "", extras: "" });
+            handleCreate();
+            console.log(form);
           }}
         >
           create
