@@ -14,7 +14,7 @@ function NewCustomerButton({ setCustomerList, customerList }) {
     if (form.name.length < 1) {
       alert("Customer Name - Needs a value");
     } else setCustomerList([...customerList, form]);
-    setForm({ name: "", trollies: "", extras: "2 loose", id: uuidv4() });
+    setForm({ name: "", trollies: "", extras: "", id: uuidv4() });
   }
 
   function handleFormInputs(event, key) {
@@ -64,7 +64,6 @@ function NewCustomerButton({ setCustomerList, customerList }) {
           className=" rounded-xl lg:w-2/3 w-11/12 mb-3 h-8 border-2 bg-black text-white hover:text-black hover:bg-yellow-400"
           onClick={() => {
             handleCreate();
-            console.log(form);
           }}
         >
           create

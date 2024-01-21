@@ -1,7 +1,6 @@
 import { useState } from "react";
 import NewCustomerForm from "./NewCustomerForm";
 import VehicleInfo from "./VehicleInfo";
-import Customer from "./Customer";
 import {
   DndContext,
   KeyboardSensor,
@@ -25,29 +24,19 @@ function CustomerSection({
   const [showCustomerList, setShowCustomerList] = useState(false);
 
   // ---------------------------------------------------------
-  const [practiceList, setPracticeList] = useState([
-    { id: 1, name: "Albar", extras: "2 Pallets", trollies: 2 },
-  ]);
 
-  // ---------------------------------------------------------
-  const [tasks, setTasks] = useState([
-    { id: 1, title: "lewis", trollies: 2, extras: "2 Pallets" },
-    { id: 2, title: "jen" },
-    { id: 3, title: "stan" },
-  ]);
-
-  const getTaskPos = (id) => tasks.findIndex((task) => task.id === id);
+  const getTaskPos = (id) => customerList.findIndex((task) => task.id === id);
 
   const handleDragEnd = (event) => {
     const { active, over } = event;
 
     if (active.id === over.id) return;
 
-    setTasks((tasks) => {
+    setCustomerList((customerList) => {
       const origonalPos = getTaskPos(active.id);
       const newPos = getTaskPos(over.id);
 
-      return arrayMove(tasks, origonalPos, newPos);
+      return arrayMove(customerList, origonalPos, newPos);
     });
   };
   const pointerSensor = useSensor(PointerSensor, {
@@ -116,20 +105,12 @@ function CustomerSection({
           onDragEnd={handleDragEnd}
           collisionDetection={closestCorners}
         >
-          {/* <Customer
-            customerList={customerList}
-            setCustomerList={setCustomerList}
+          <Column
+            tasks={customerList}
+            setTasks={setCustomerList}
             onClick={onClick}
-          /> */}
-          <Column tasks={tasks} setTasks={setTasks} />
+          />
         </DndContext>
-
-        <Customer
-          customerList={customerList}
-          setCustomerList={setCustomerList}
-          onClick={onClick}
-        />
-        {console.log("customer --", { customerList })}
       </div>
     </div>
   );

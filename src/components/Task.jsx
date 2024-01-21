@@ -9,6 +9,7 @@ export const Task = ({
   extras,
   trollies,
   index,
+  onClick,
 }) => {
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({ id });
@@ -32,7 +33,7 @@ export const Task = ({
       key={id}
     >
       <div
-        onClick={() => console.log(title)}
+        onClick={() => onClick(title)}
         className="  w-full h-11 lg:h-11 grid grid-rows-1 grid-cols-[3fr_1fr] border-b-2 "
       >
         <div className="flex flex-row lg:gap-1 ">
