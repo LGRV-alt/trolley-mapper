@@ -36,17 +36,6 @@ function NewCustomerButton({ setCustomerList, customerList }) {
             }}
           />
         </div>
-        <div className="w-full flex flex-col ">
-          <label className="flex mb-1">Extras</label>
-          <input
-            className="mb-2 lg:w-2/3 w-11/12 rounded  border-2  border-black dark:border-white p-1 bg-transparent hover:border-blue-800"
-            value={form.extras}
-            type="text"
-            name="extras"
-            placeholder="10 Comp"
-            onChange={(event) => handleFormInputs(event, "extras")}
-          />
-        </div>
         <div className="w-full flex  flex-col ">
           <label className="flex mb-1 ">Trollies</label>
           <input
@@ -59,6 +48,18 @@ function NewCustomerButton({ setCustomerList, customerList }) {
             onChange={(event) => handleFormInputs(event, "trollies")}
           />
         </div>
+        <div className="w-full flex flex-col ">
+          <label className="flex mb-1">Extras</label>
+          <input
+            className="mb-2 lg:w-2/3 w-11/12 rounded  border-2  border-black dark:border-white p-1 bg-transparent hover:border-blue-800"
+            value={form.extras}
+            type="text"
+            name="extras"
+            placeholder="10 Comp"
+            onChange={(event) => handleFormInputs(event, "extras")}
+          />
+        </div>
+
         <button
           type="button"
           className=" rounded-xl lg:w-2/3 w-11/12 mb-3 h-8 border-2 bg-black text-white hover:text-black hover:bg-yellow-400"

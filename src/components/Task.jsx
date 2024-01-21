@@ -1,5 +1,6 @@
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
+import { useEffect } from "react";
 
 export const Task = ({
   id,
@@ -23,6 +24,20 @@ export const Task = ({
     transition,
     transform: CSS.Transform.toString(transform),
   };
+
+  //   attaching the onClick to the index number
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      if (e.key == index + 1) {
+        const list = tasks.filter((item) => tasks.indexOf(item) === index);
+        onClick(list[0].name);
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, tasks);
+  //   ------------------------------------------
+
   return (
     <div
       className="touch-none"
