@@ -49,7 +49,7 @@ export const Task = ({
     >
       <div
         onClick={() => onClick(title)}
-        className="  w-full h-11 lg:h-11 grid grid-rows-1 grid-cols-[3fr_1fr] border-b-2 "
+        className="  w-full h-auto lg:h-auto grid grid-rows-1  grid-cols-[3fr_3fr] lg:grid-cols-[2fr_3fr] border-b-2 "
       >
         <div className="flex flex-row lg:gap-1 ">
           <button

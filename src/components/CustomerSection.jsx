@@ -97,7 +97,7 @@ function CustomerSection({
           </div>
         )}
         <h3
-          className="lg:ml-2 ml-5 w-[70%] text-left text-transparent dark: text-white  lg:w-[90%] lg:text-end hover:text-blue-500 hover:cursor-pointer"
+          className="lg:ml-2  ml-5 w-[70%] text-left text-transparent dark: text-white  lg:w-[90%] lg:text-end hover:text-blue-500 hover:cursor-pointer"
           onClick={() => onClick("Blank Trolley")}
         >
           Blank Trolley

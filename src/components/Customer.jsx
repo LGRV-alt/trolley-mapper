@@ -14,7 +14,7 @@ function Customer({ customerList, setCustomerList, onClick }) {
         <div
           key={index}
           onClick={() => onClick([item.name])}
-          className="  w-full h-11 lg:h-11 grid grid-rows-1 grid-cols-[3fr_1fr] border-b-2 "
+          className="  w-full h-11 lg:h-11 grid grid-rows-1 grid-cols-[1fr_1fr] border-b-2 "
         >
           <div className="flex flex-row lg:gap-1 ">
             <button
@@ -23,7 +23,7 @@ function Customer({ customerList, setCustomerList, onClick }) {
             >
               X
             </button>
-            <h3 className="flex lg:text-lg   items-center sm:text-base  hover:text-blue-500 hover:cursor-pointer">
+            <h3 className="flex lg:text-lg items-center sm:text-base  hover:text-blue-500 hover:cursor-pointer">
               {index + 1} - {item.name} {item.id}
             </h3>
           </div>
@@ -35,7 +35,9 @@ function Customer({ customerList, setCustomerList, onClick }) {
                 {item.trollies}T
               </p>
             ) : null}
-            <p className="text-amber-600 flex items-center">{item.extras}</p>
+            <p className="text-amber-600 flex w-1/2 items-center">
+              {item.extras}
+            </p>
           </div>
         </div>
       ))}
