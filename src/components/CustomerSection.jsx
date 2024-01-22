@@ -59,7 +59,7 @@ function CustomerSection({
     <div className="lg:ml-4">
       <div className="flex justify-center items-center gap-1">
         <button
-          className="dark:bg-dark-button-main border-2 dark:border-none w-[70%] rounded-xl mt-2 mb-2 p-2 hover:bg-button-main-hover"
+          className="dark:bg-dark-button-main border-2 dark:border-none w-[70%] rounded-xl mt-2 mb-2 p-2 hover:bg-button-main-hover "
           onClick={() => setShowCustomerList(!showCustomerList)}
         >
           Add Customer
