@@ -27,6 +27,12 @@ function CustomerSection({
 
   const getTaskPos = (id) => customerList.findIndex((task) => task.id === id);
 
+  function handleTotalTrollies(arr) {
+    let trolleyCount = 0;
+    arr.map((item) => (trolleyCount += Number(item.trollies)));
+    return trolleyCount;
+  }
+
   const handleDragEnd = (event) => {
     const { active, over } = event;
 
@@ -58,12 +64,14 @@ function CustomerSection({
   return (
     <div className="lg:ml-4">
       <div className="flex justify-center items-center gap-1">
-        <button
-          className="dark:bg-dark-button-main border-2 dark:border-none w-[70%] rounded-xl mt-2 mb-2 p-2 hover:bg-button-main-hover "
-          onClick={() => setShowCustomerList(!showCustomerList)}
-        >
-          Add Customer
-        </button>
+        {printMode ? (
+          <button
+            className="dark:bg-dark-button-main border-2 dark:border-none w-[70%] rounded-xl mt-2 mb-2 p-2 hover:bg-button-main-hover "
+            onClick={() => setShowCustomerList(!showCustomerList)}
+          >
+            Add Customer
+          </button>
+        ) : null}
         <button
           className="dark:bg-orange-700 border-2 dark:border-none w-[20%] p-2 rounded-xl  mt-2 mb-2 hover:bg-orange-400"
           onClick={() => {
@@ -102,6 +110,9 @@ function CustomerSection({
         >
           Blank Trolley
         </h3>
+        <p className="underline pl-4 font-bold">
+          Total Trolleys- {handleTotalTrollies(customerList)}
+        </p>
         <DndContext
           sensors={sensors}
           onDragEnd={handleDragEnd}
