@@ -98,18 +98,21 @@ function CustomerSection({
 
       <div className="dark:bg-dark-customer-input dark:border-none border-2 rounded-3xl p-3 m-2 lg:ml-0 lg:mr-0">
         {printMode ? null : (
-          <div className="w-full flex justify-around">
+          <div className="w-full flex justify-around mb-4">
             <p>Driver-{vehicleForm.driver}</p>
             <p>Vehicle-{vehicleForm.vehicleReg.toUpperCase()}</p>
             <p>Date- {vehicleForm.date}</p>
           </div>
         )}
-        <h3
-          className="lg:ml-2  ml-5 w-[70%] text-left text-transparent dark: text-white  lg:w-[90%] lg:text-end hover:text-blue-500 hover:cursor-pointer"
-          onClick={() => onClick("Blank Trolley")}
-        >
-          Blank Trolley
-        </h3>
+        {printMode ? (
+          <h3
+            className="lg:ml-2  ml-5  text-transparent dark: text-white  w-[90%] text-end hover:text-blue-500 hover:cursor-pointer"
+            onClick={() => onClick("Blank Trolley")}
+          >
+            Blank Trolley
+          </h3>
+        ) : null}
+
         <p className="underline pl-4 font-bold">
           Total Trolleys- {handleTotalTrollies(customerList)}
         </p>
