@@ -29,6 +29,16 @@ function CustomerSection({
     return trolleyCount;
   }
 
+  // ----------- Testing local storage for customer list ----19.2.24---------------
+
+  function saveCustomerLocalStorage() {
+    localStorage.setItem(
+      vehicleForm.date + vehicleForm.driver,
+      JSON.stringify(customerList)
+    );
+    console.log(localStorage);
+  }
+
   // ---------------------------------------------------------
 
   const getTaskPos = (id) => customerList.findIndex((task) => task.id === id);
@@ -65,12 +75,20 @@ function CustomerSection({
     <div className="lg:ml-4">
       <div className="flex justify-center items-center gap-1">
         {printMode ? (
-          <button
-            className="dark:bg-dark-button-main border-2 dark:border-none w-[70%] rounded-xl mt-2 mb-2 p-2 hover:bg-button-main-hover "
-            onClick={() => setShowCustomerList(!showCustomerList)}
-          >
-            Add Customer
-          </button>
+          <div>
+            <button
+              className="dark:bg-dark-button-main border-2 dark:border-none w-[70%] rounded-xl mt-2 mb-2 p-2 hover:bg-button-main-hover "
+              onClick={() => setShowCustomerList(!showCustomerList)}
+            >
+              Add Customer
+            </button>
+            <button
+              onClick={() => saveCustomerLocalStorage()}
+              className="bg-red-500"
+            >
+              save
+            </button>
+          </div>
         ) : null}
         <button
           className="dark:bg-orange-700 border-2 dark:border-none w-[20%] p-2 rounded-xl  mt-2 mb-2 hover:bg-orange-400"

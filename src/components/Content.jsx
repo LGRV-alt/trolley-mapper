@@ -5,6 +5,8 @@ import { useState } from "react";
 function Content({ printMode, togglePrintMode, vehicleForm, setVehicleForm }) {
   const [customerValue, setCustomerValue] = useState("");
 
+  sessionStorage.setItem("color", [customerValue]);
+
   return (
     <div
       id="content"
