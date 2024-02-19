@@ -49,16 +49,18 @@ export const Task = ({
     >
       <div
         onClick={() => onClick(title)}
-        className="  w-full h-auto lg:h-auto grid grid-rows-1  grid-cols-[3fr_3fr] lg:grid-cols-[2fr_3fr] border-b-2 "
+        className="w-full h-auto lg:h-auto grid grid-rows-1  grid-cols-[3fr_3fr] lg:grid-cols-[2fr_3fr] border-b-2 dark:border-gray-500  hover:border-green-500 "
       >
         <div className="flex flex-row lg:gap-1 ">
-          <button
-            onClick={() => handleDel(index)}
-            className="w-6 flex items-center justify-center text-sm lg:text-lg text-transparent dark:text-red-600  hover:text-white hover:rounded-full "
-          >
-            X
-          </button>
-          <h3 className="flex lg:text-lg   items-center sm:text-base  hover:text-blue-500 hover:cursor-pointer">
+          <div>
+            <button
+              onClick={() => handleDel(index)}
+              className="w-4 h-full ml-1 mr-1 text-sm lg:text-base text-transparent dark:text-red-600 hover:text-white"
+            >
+              X
+            </button>
+          </div>
+          <h3 className="flex lg:text-lg   items-center sm:text-base ">
             {index + 1} - {title}
           </h3>
         </div>

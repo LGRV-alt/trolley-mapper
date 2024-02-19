@@ -20,6 +20,7 @@ function NewCustomerButton({ setCustomerList, customerList }) {
   function handleFormInputs(event, key) {
     setForm({ ...form, [key]: event.target.value });
   }
+
   return (
     <div className=" rounded-3xl ml-2 lg:ml-0 lg:min-w-60 bg-light-customer-input dark:bg-dark-customer-input">
       <form className="grid grid-cols-1 grid-rows-3 mt-4 ml-4">
@@ -31,6 +32,7 @@ function NewCustomerButton({ setCustomerList, customerList }) {
             type="text"
             name="name"
             placeholder="Landscapers"
+            required
             onChange={(event) => {
               handleFormInputs(event, "name");
             }}

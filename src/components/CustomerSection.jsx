@@ -23,15 +23,15 @@ function CustomerSection({
   const [customerList, setCustomerList] = useState([]);
   const [showCustomerList, setShowCustomerList] = useState(false);
 
-  // ---------------------------------------------------------
-
-  const getTaskPos = (id) => customerList.findIndex((task) => task.id === id);
-
   function handleTotalTrollies(arr) {
     let trolleyCount = 0;
     arr.map((item) => (trolleyCount += Number(item.trollies)));
     return trolleyCount;
   }
+
+  // ---------------------------------------------------------
+
+  const getTaskPos = (id) => customerList.findIndex((task) => task.id === id);
 
   const handleDragEnd = (event) => {
     const { active, over } = event;
@@ -106,14 +106,14 @@ function CustomerSection({
         )}
         {printMode ? (
           <h3
-            className="lg:ml-2  ml-5  text-transparent dark: text-white  w-[90%] text-end hover:text-blue-500 hover:cursor-pointer"
+            className="lg:ml-2  ml-5  text-transparent dark: text-white  w-[90%] text-end hover:text-green-500 hover:cursor-pointer"
             onClick={() => onClick("Blank Trolley")}
           >
             Blank Trolley
           </h3>
         ) : null}
 
-        <p className="underline pl-4 font-bold">
+        <p className=" pl-1 font-bold">
           Total Trolleys- {handleTotalTrollies(customerList)}
         </p>
         <DndContext
