@@ -64,7 +64,7 @@ function NewCustomerButton({ setCustomerList, customerList }) {
 
         <button
           type="button"
-          className=" rounded-xl lg:w-2/3 w-11/12 mb-3 h-8 border-2 bg-black text-white hover:text-black hover:bg-yellow-400"
+          className=" flex justify-center rounded-xl lg:w-2/3 w-11/12 mb-3 h-8 border-2 bg-black text-white hover:text-black hover:bg-yellow-400"
           onClick={() => {
             handleCreate();
           }}

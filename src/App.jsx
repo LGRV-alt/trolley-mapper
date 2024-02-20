@@ -57,7 +57,7 @@ function App() {
 
   return (
     <div id="mainContent" className={`${printMode && "dark"}`}>
-      <div className="dark:text-dark-secondary dark:bg-dark-primary h-full bg-light-primary text-light-secondary">
+      <div className="dark:text-dark-secondary dark:bg-dark-primary  bg-light-primary text-light-secondary">
         <Header printMode={printMode} downloadPdf={downloadPdf} />
 
         <Content

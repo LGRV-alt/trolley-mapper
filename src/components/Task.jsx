@@ -46,10 +46,11 @@ export const Task = ({
       {...listeners}
       style={style}
       key={id}
+      tabIndex={0}
     >
       <div
         onClick={() => onClick(title)}
-        className="w-full h-auto lg:h-auto grid grid-rows-1  grid-cols-[3fr_3fr] lg:grid-cols-[2fr_3fr] border-b-2 dark:border-gray-500  hover:border-green-500 "
+        className="w-full h-auto lg:h-auto grid grid-rows-1  grid-cols-[3fr_3fr] lg:grid-cols-[2fr_3fr] border-b-2 dark:border-gray-500  hover:border-green-500 active:border-green-300 focus-within:bg-red-500"
       >
         <div className="flex flex-row lg:gap-1 ">
           <div>

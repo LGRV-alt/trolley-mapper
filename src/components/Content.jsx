@@ -10,7 +10,7 @@ function Content({ printMode, togglePrintMode, vehicleForm, setVehicleForm }) {
   return (
     <div
       id="content"
-      className=" grid-cols-1 grid  h-full  md:grid-cols-2 lg:grid-rows-1 "
+      className=" grid-cols-1 grid   md:grid-cols-2 lg:grid-rows-1 "
     >
       <CustomerSection
         customerName={customerValue}

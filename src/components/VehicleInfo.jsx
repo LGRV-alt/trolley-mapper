@@ -20,8 +20,8 @@ function VehicleInfo({ vehicleForm, setVehicleForm }) {
             }
           />
         </div>
-        <div className="w-full flex flex-col mb-1">
-          <label className="flex justify-between mb-2 ">Vehicle Reg</label>
+        <div className="w-full flex flex-col">
+          <label className="flex justify-between mb-1 ">Vehicle Reg</label>
           <input
             className=" lg:w-2/3 w-11/12 rounded border-2 border-black dark:border-white p-1 bg-transparent hover:border-blue-800"
             type="text"
