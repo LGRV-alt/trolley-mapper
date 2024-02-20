@@ -31,13 +31,13 @@ function CustomerSection({
 
   // ----------- Testing local storage for customer list ----19.2.24---------------
 
-  function saveCustomerLocalStorage() {
-    localStorage.setItem(
-      vehicleForm.date + vehicleForm.driver,
-      JSON.stringify(customerList)
-    );
-    console.log(localStorage);
-  }
+  // function saveCustomerLocalStorage() {
+  //   localStorage.setItem(
+  //     vehicleForm.date + vehicleForm.driver,
+  //     JSON.stringify(customerList)
+  //   );
+  //   console.log(localStorage);
+  // }
 
   // ---------------------------------------------------------
 
@@ -75,20 +75,12 @@ function CustomerSection({
     <div className="lg:ml-4">
       <div className="flex justify-center items-center gap-1">
         {printMode ? (
-          <div>
-            <button
-              className="dark:bg-dark-button-main border-2 dark:border-none w-[70%] rounded-xl mt-2 mb-2 p-2 hover:bg-button-main-hover "
-              onClick={() => setShowCustomerList(!showCustomerList)}
-            >
-              Add Customer
-            </button>
-            <button
-              onClick={() => saveCustomerLocalStorage()}
-              className="bg-red-500"
-            >
-              save
-            </button>
-          </div>
+          <button
+            className="dark:bg-dark-button-main border-2 dark:border-none w-[70%] rounded-xl mt-2 mb-2 p-2 hover:bg-button-main-hover "
+            onClick={() => setShowCustomerList(!showCustomerList)}
+          >
+            Add Customer
+          </button>
         ) : null}
         <button
           className="dark:bg-orange-700 border-2 dark:border-none w-[20%] p-2 rounded-xl  mt-2 mb-2 hover:bg-orange-400"
@@ -117,8 +109,8 @@ function CustomerSection({
       <div className="dark:bg-dark-customer-input dark:border-none border-2 rounded-3xl p-3 m-2 lg:ml-0 lg:mr-0">
         {printMode ? null : (
           <div className="w-full flex justify-around mb-4">
-            <p>Driver-{vehicleForm.driver}</p>
-            <p>Vehicle-{vehicleForm.vehicleReg.toUpperCase()}</p>
+            <p>Driver- {vehicleForm.driver}</p>
+            <p>Vehicle- {vehicleForm.vehicleReg.toUpperCase()}</p>
             <p>Date- {vehicleForm.date}</p>
           </div>
         )}
