@@ -83,7 +83,7 @@ function CustomerSection({
           </button>
         ) : null}
         <button
-          className="dark:bg-orange-700 border-2 dark:border-none w-[20%] p-2 rounded-xl  mt-2 mb-2 hover:bg-orange-400"
+          className="dark:bg-orange-700 dark:border-2 text-white dark:border-none w-[20%] p-2 rounded-xl  mt-2 mb-2 hover:bg-orange-400"
           onClick={() => {
             togglePrintMode();
             setShowCustomerList(false);
@@ -106,7 +106,7 @@ function CustomerSection({
         </div>
       ) : null}
 
-      <div className="dark:bg-dark-customer-input dark:border-none border-2 rounded-3xl p-3 m-2 lg:ml-0 lg:mr-0">
+      <div className="dark:bg-dark-customer-input  dark:border-none border-black border-2  rounded-3xl p-3 m-2 lg:ml-0 lg:mr-0">
         {printMode ? null : (
           <div className="w-full flex justify-around mb-4">
             <p>Driver- {vehicleForm.driver}</p>

@@ -25,7 +25,7 @@ function VechicleSection({ customerName, printMode }) {
   }
 
   return (
-    <div className=" p-2 flex h-screen mt-8 lg:mt-0 content-center flex-col items-center ">
+    <div className=" p-2 flex h-full mt-8 lg:mt-0 content-center flex-col items-center ">
       {printMode ? (
         <div className="mb-2">
           <button
@@ -47,7 +47,11 @@ function VechicleSection({ customerName, printMode }) {
         <TrollySelector lorry={lorry} setGridItems={setGridItems} />
       ) : null}
       {vehicle === "lorry" ? (
-        <LorryMap customerName={customerName} grid={gridItems} />
+        <LorryMap
+          customerName={customerName}
+          grid={gridItems}
+          printMode={printMode}
+        />
       ) : (
         <TrailerMap customerName={customerName} grid={gridItems} />
       )}

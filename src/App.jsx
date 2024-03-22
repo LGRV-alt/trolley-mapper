@@ -56,8 +56,8 @@ function App() {
   const downloadPdf = () => generatePDF(getTargetElement, options);
 
   return (
-    <div id="mainContent" className={`${printMode && "dark"}`}>
-      <div className="dark:text-dark-secondary dark:bg-dark-primary  bg-light-primary text-light-secondary">
+    <div id="mainContent" className={`${printMode && "dark"} h-screen`}>
+      <div className="dark:text-dark-secondary dark:bg-dark-primary  bg-light-primary text-light-secondary h-full">
         <Header printMode={printMode} downloadPdf={downloadPdf} />
 
         <Content
