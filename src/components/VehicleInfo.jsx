@@ -33,8 +33,8 @@ function VehicleInfo({ vehicleForm, setVehicleForm }) {
             }
           />
         </div>
-        <div className="w-full mt-2">
-          <label className="flex justify-between mb-2 ">Date</label>
+        <div className="w-full">
+          <label className="flex justify-between mb-1 ">Date</label>
           <input
             type="date"
             className=" bg-transparent flex justify-center items-center "

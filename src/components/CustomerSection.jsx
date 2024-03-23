@@ -109,9 +109,9 @@ function CustomerSection({
       <div className="dark:bg-dark-customer-input  dark:border-none border-black border-2  rounded-3xl p-3 m-2 lg:ml-0 lg:mr-0">
         {printMode ? null : (
           <div className="w-full flex justify-around mb-4">
-            <p>Driver- {vehicleForm.driver}</p>
+            <p>Driver- {vehicleForm.driver.toUpperCase()}</p>
             <p>Vehicle- {vehicleForm.vehicleReg.toUpperCase()}</p>
-            <p>Date- {vehicleForm.date}</p>
+            <p>Date- {vehicleForm.date.split("-").reverse().join("/")}</p>
           </div>
         )}
         {printMode ? (
