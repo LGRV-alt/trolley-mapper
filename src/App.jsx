@@ -26,7 +26,8 @@ function App() {
     resolution: Resolution.MEDIUM,
     page: {
       // margin is in MM, default is Margin.NONE = 0
-      margin: Margin.SMALL,
+      margin: Margin.NONE,
+      // margin: Margin.SMALL,
       // default is 'A4'
       format: "A4",
       // default is 'portrait'
