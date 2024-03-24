@@ -38,6 +38,10 @@ export const Task = ({
   }, [tasks]);
   //   ------------------------------------------
 
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
   return (
     <div
       className="touch-none"
@@ -62,7 +66,7 @@ export const Task = ({
             </button>
           </div>
           <h3 className="flex lg:text-lg   items-center sm:text-base ">
-            {index + 1} - {title}
+            {index + 1} - {capitalizeFirstLetter(title)}
           </h3>
         </div>
 
