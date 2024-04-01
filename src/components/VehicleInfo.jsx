@@ -33,6 +33,7 @@ function VehicleInfo({ vehicleForm, setVehicleForm }) {
             }
           />
         </div>
+
         <div className="w-full">
           <label className="flex justify-between mb-1 ">Date</label>
           <input
@@ -42,6 +43,19 @@ function VehicleInfo({ vehicleForm, setVehicleForm }) {
               setVehicleForm({ ...vehicleForm, date: e.target.value })
             }
             value={vehicleForm.date}
+          />
+        </div>
+        <div className="w-full flex flex-col mb-4">
+          <label className="flex justify-between mb-1 ">Code</label>
+          <input
+            className=" lg:w-2/3 w-11/12 rounded border-2 border-black dark:border-white p-1 bg-transparent hover:border-blue-800"
+            type="text"
+            name="code"
+            placeholder=""
+            value={vehicleForm.code}
+            onChange={(e) =>
+              setVehicleForm({ ...vehicleForm, code: e.target.value })
+            }
           />
         </div>
       </form>

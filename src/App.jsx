@@ -9,6 +9,7 @@ function App() {
     driver: "",
     vehicleReg: "",
     date: "",
+    code: "",
   });
   const togglePrintMode = () => {
     setPrintMode(!printMode);
@@ -26,8 +27,8 @@ function App() {
     resolution: Resolution.MEDIUM,
     page: {
       // margin is in MM, default is Margin.NONE = 0
-      margin: Margin.NONE,
-      // margin: Margin.SMALL,
+      // margin: Margin.NONE,
+      margin: Margin.SMALL,
       // default is 'A4'
       format: "A4",
       // default is 'portrait'
@@ -59,7 +60,11 @@ function App() {
   return (
     <div id="mainContent" className={`${printMode && "dark"} h-screen`}>
       <div className="dark:text-dark-secondary dark:bg-dark-primary  bg-light-primary text-light-secondary h-full">
-        <Header printMode={printMode} downloadPdf={downloadPdf} />
+        <Header
+          printMode={printMode}
+          downloadPdf={downloadPdf}
+          vehicleForm={vehicleForm}
+        />
 
         <Content
           togglePrintMode={togglePrintMode}

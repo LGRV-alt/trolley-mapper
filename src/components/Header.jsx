@@ -2,7 +2,7 @@ import { GoogleMapsLogo } from "./GoogleMapsLogo.jsx";
 import { Logo } from "./logo.jsx";
 import { PdfLogo } from "./PdfLogo.jsx";
 
-function Header({ printMode, targetRef, downloadPdf }) {
+function Header({ printMode, targetRef, downloadPdf, vehicleForm }) {
   return (
     <div
       ref={targetRef}
@@ -20,6 +20,7 @@ function Header({ printMode, targetRef, downloadPdf }) {
         >
           Trolley Mapper
         </h1>
+        {printMode ? null : <p>/{vehicleForm.code}</p>}
       </div>
 
       <div className="lg:mr-5 mr-2 flex gap-2">
