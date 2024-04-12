@@ -65,7 +65,7 @@ export const Task = ({
               X
             </button>
           </div>
-          <h3 className="flex lg:text-lg   items-center sm:text-base ">
+          <h3 className="flex lg:text-xl   items-center sm:text-base ">
             {index + 1} - {capitalizeFirstLetter(title)}
           </h3>
         </div>
