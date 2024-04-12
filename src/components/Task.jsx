@@ -65,19 +65,19 @@ export const Task = ({
               X
             </button>
           </div>
-          <h3 className="flex lg:text-xl   items-center sm:text-base ">
+          <h3 className="flex lg:text-2xl   items-center sm:text-base ">
             {index + 1} - {capitalizeFirstLetter(title)}
           </h3>
         </div>
 
-        <div className="text-xl flex flex-row justify-start lg:justify-end gap-2 pr-0 lg:pr-7 w-full">
+        <div className="text-2xl flex flex-row justify-start lg:justify-end gap-2 pr-0 lg:pr-7 w-full">
           {trollies ? (
-            <p className="text-red-500 flex justify-center items-center  ">
+            <p className="text-black dark:text-red-500 flex justify-center items-center  ">
               {" "}
               {trollies}T
             </p>
           ) : null}
-          <p className="text-red-400 dark:text-white flex items-center">
+          <p className="text-red-500 font-bold dark:text-white flex items-center">
             {extras}
           </p>
         </div>
