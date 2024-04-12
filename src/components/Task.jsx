@@ -70,14 +70,16 @@ export const Task = ({
           </h3>
         </div>
 
-        <div className="flex flex-row justify-start lg:justify-end gap-2 pr-0 lg:pr-7 w-full">
+        <div className="text-xl flex flex-row justify-start lg:justify-end gap-2 pr-0 lg:pr-7 w-full">
           {trollies ? (
             <p className="text-red-500 flex justify-center items-center  ">
               {" "}
               {trollies}T
             </p>
           ) : null}
-          <p className="text-amber-600 flex items-center">{extras}</p>
+          <p className="text-red-400 dark:text-white flex items-center">
+            {extras}
+          </p>
         </div>
       </div>
     </div>
