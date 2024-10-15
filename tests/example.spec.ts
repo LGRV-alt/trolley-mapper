@@ -46,3 +46,21 @@ test("Check customer name gets added to the map section, check for empty box", a
   // await expect(page.locator("#content")).toContainText("John Doe");
   await expect(page.locator("div:nth-child(5) > .flex")).toBeVisible();
 });
+
+test("Check the trailer section shows and will allow customer name to be placed in item", async ({
+  page,
+}) => {
+  await page.goto("http://localhost:5173/");
+  await page.getByRole("button", { name: "Add Customer" }).click();
+  await page.getByPlaceholder("Landscapers").click();
+  await page.getByPlaceholder("Landscapers").fill("John Doe");
+  await page.getByPlaceholder("4T").click();
+  await page.getByPlaceholder("4T").fill("2");
+  await page.getByRole("button", { name: "create" }).click();
+  await page.getByRole("button", { name: "Add Customer" }).click();
+  await page.getByRole("button", { name: "Trailer" }).click();
+  await page.getByRole("button", { name: "3T" }).click();
+  await page.getByRole("button", { name: "X 1 - John Doe 2T" }).click();
+  await page.locator(".border-black > .flex").first().click();
+  await expect(page.locator("#trailerMap")).toContainText("John Doe");
+});
