@@ -29,7 +29,6 @@ test.describe("Testing array", () => {
   });
 
   test("Trolley Mapper Title", async ({ page }) => {
-    await page.goto("http://localhost:5173/");
     // Expect a title "to contain" a substring.
     await expect(page).toHaveTitle(/Trolley Mapper/);
   });
@@ -38,7 +37,6 @@ test.describe("Testing array", () => {
 test("Input trolley number and check its shown on the total", async ({
   page,
 }) => {
-  await page.goto("http://localhost:5173/");
   await page.getByRole("button", { name: "Add Customer" }).click();
   await page.getByPlaceholder("Landscapers").click();
   await page.getByPlaceholder("Landscapers").fill("Test");
@@ -54,7 +52,6 @@ test("Input trolley number and check its shown on the total", async ({
 test("Check customer name gets added to the map section, check for empty box", async ({
   page,
 }) => {
-  await page.goto("http://localhost:5173/");
   await page.getByRole("button", { name: "Add Customer" }).click();
   await page.getByPlaceholder("Landscapers").click();
   await page.getByPlaceholder("Landscapers").fill("John Doe");
@@ -79,7 +76,6 @@ test("Check customer name gets added to the map section, check for empty box", a
 test("Check the trailer section shows and will allow customer name to be placed in item", async ({
   page,
 }) => {
-  await page.goto("http://localhost:5173/");
   await page.getByRole("button", { name: "Add Customer" }).click();
   await page.getByPlaceholder("Landscapers").click();
   await page.getByPlaceholder("Landscapers").fill("John Doe");
