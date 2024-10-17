@@ -23,7 +23,11 @@ test("Testing multiple entries coming from an array", async ({ page }) => {
     await page.getByRole("button", { name: "create" }).click();
   }
   await page.getByRole("button", { name: "Add Customer" }).click();
-  await expect(page.locator("#content")).toContainText("Total Trolleys- 12");
+  await page
+    .getByRole("button", { name: "X 3 - Jane 5T" })
+    .getByRole("button")
+    .click();
+  await expect(page.locator("#content")).toContainText("Total Trolleys- 7");
 });
 
 test("Input trolley number and check its shown on the total", async ({
