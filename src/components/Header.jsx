@@ -1,6 +1,6 @@
-import { GoogleMapsLogo } from "./GoogleMapsLogo.jsx";
-import { Logo } from "./logo.jsx";
-import { PdfLogo } from "./PdfLogo.jsx";
+import { GoogleMapsLogo } from "../assets/GoogleMapsLogo.jsx";
+import { Logo } from "../assets/logo.jsx";
+import { PdfLogo } from "../assets/PdfLogo.jsx";
 
 function Header({ printMode, targetRef, downloadPdf, vehicleForm }) {
   return (
